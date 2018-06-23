@@ -80,7 +80,7 @@ export class AuthService {
 
   criaDadosAoBanco(id: string, data) {
     this.bd.collection("users").doc(id).set(data, { merge: true })
-      .then(data => console.log(data))
+      .then()
       .catch(error => console.log(error)
       )
   }

@@ -13,13 +13,22 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { RegistrarComponent } from './registrar/registrar.component';
+import { FoundsComponent } from './painel/founds/founds.component';
+import { DashboardComponent } from './painel/dashboard/dashboard.component';
+import { InstaCurtidasComponent } from './painel/midia/insta-curtidas/insta-curtidas.component';
+import { InstaSeguidoresComponent } from './painel/midia/insta-seguidores/insta-seguidores.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     PainelComponent,
     LoginComponent,
-    RegistrarComponent
+    RegistrarComponent,
+    FoundsComponent,
+    DashboardComponent,
+    InstaCurtidasComponent,
+    InstaSeguidoresComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +36,8 @@ import { RegistrarComponent } from './registrar/registrar.component';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
