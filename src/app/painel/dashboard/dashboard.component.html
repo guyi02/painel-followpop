@@ -78,8 +78,12 @@
       </div>
     </div>
 
+    <div *ngIf="pedidos?.length == 0">
+      <p>Opps você ainda não possui pedidos</p>
+    </div>
+
     <!-- Example DataTables Card-->
-    <div class="card mb-3">
+    <div *ngIf="pedidos?.length > 0" class="card mb-3">
       <div class="card-header">
         <i class="fas fa-handshake"></i> Meus pedidos</div>
       <div class="card-body">
@@ -87,8 +91,8 @@
           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
               <tr>
-                <th>Id</th>
                 <th>Serviço</th>
+                <th>Tipo</th>
                 <th>Status</th>
                 <th>Qtd</th>
                 <th>Data</th>
@@ -97,8 +101,8 @@
             </thead>
             <tfoot>
               <tr>
-                <th>Id</th>
                 <th>Serviço</th>
+                <th>Tipo</th>
                 <th>Status</th>
                 <th>Qtd</th>
                 <th>Data</th>
@@ -106,25 +110,15 @@
               </tr>
             </tfoot>
             <tbody>
-              <tr>
-                <td>122457888</td>
-                <td>Curtidas Instagram</td>
+              <tr *ngFor="let listPedidos of pedidos">
+                <td>{{listPedidos.servico}}</td>
+                <td>{{listPedidos.tipo}}</td>
                 <td>
-                  <strong>Concluído</strong>
+                  <strong>{{listPedidos.status}}</strong>
                 </td>
-                <td>400</td>
-                <td>20/06/2018</td>
-                <td>R$29,00</td>
-              </tr>
-              <tr>
-                <td>245878454</td>
-                <td>Curtidas Página Facebook</td>
-                <td>
-                  <strong>Pendente</strong>
-                </td>
-                <td>1000</td>
-                <td>28/05/2018</td>
-                <td>R$51,00</td>
+                <td>{{listPedidos.quantidade}}</td>
+                <td>{{dataCorreta(listPedidos.data.seconds)}}</td>
+                <td>R${{listPedidos.valor}}</td>
               </tr>
             </tbody>
           </table>

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
 import { AppComponent } from './app.component';
 import { PainelComponent } from './painel/painel.component';
 import { LoginComponent } from './login/login.component';
@@ -17,6 +18,7 @@ import { FoundsComponent } from './painel/founds/founds.component';
 import { DashboardComponent } from './painel/dashboard/dashboard.component';
 import { InstaCurtidasComponent } from './painel/midia/insta-curtidas/insta-curtidas.component';
 import { InstaSeguidoresComponent } from './painel/midia/insta-seguidores/insta-seguidores.component';
+import { CommonModule, APP_BASE_HREF, LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 
 @NgModule({
@@ -39,7 +41,8 @@ import { InstaSeguidoresComponent } from './painel/midia/insta-seguidores/insta-
     AngularFireAuthModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' },
+  { provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

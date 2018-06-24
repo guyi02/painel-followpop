@@ -6,35 +6,35 @@
         <span>Curtidas Instagram</span>
       </li>
     </ol>
-
     <!-- Icon Cards-->
     <form [formGroup]="instaCurtidasForm" class="form-horizontal">
       <div class="form-group">
-        <label for="inputEmail3" class="col-sm-2 control-label">Url da postagem</label>
+        <label for="url" class="col-sm-2 control-label">Url da postagem</label>
         <div class="col-sm-10">
-          <input type="text" formControlName="link" class="form-control input-lg" id="inputEmail3" placeholder="URL">
+          <input type="text" formControlName="link" class="form-control input-lg" id="url" placeholder="URL">
           <span style="font-size: 0.9em; color: grey" id="helpBlock" class="help-block">Exemplo: http://instagram.com/p/41pLaAgvmo/ </span>
         </div>
       </div>
 
       <div class="form-group">
-        <label for="inputPassword3" class="col-sm-2 control-label">Quantidade</label>
+        <label for="qtd" class="col-sm-2 control-label">Quantidade</label>
         <div class="col-sm-10">
-          <input #qtd type="number" formControlName="quantidade" minlength="100" id="inputHelpBlock" class="form-control input-lg" aria-describedby="helpBlock">
-          <span style="font-size: 0.9em; color: grey" id="helpBlock" class="help-block">A Quantidade deve ser multiplo de 100 exemplo: 100, 200, 300 etc.</span>
+          <input #qtd type="number" formControlName="quantidade" minlength="100" id="qtd" class="form-control input-lg" aria-describedby="helpBlock">
+          <span style="font-size: 0.9em; color: grey" id="helpBlock" class="help-block">A Quantidade deve terminar apartir de dois digitos 0 ex: 100, 500, 2000 etc.</span>
         </div>
       </div>
 
-      <div class="form-group">
-          <label for="inputPassword3" class="col-sm-2 control-label">Total</label>
-          <div class="col-sm-10">
-              <input class="form-control" formControlName="total" value="{{totalValor(qtd.value)}}" id="disabledInput" type="number">
-          </div>
-        </div>
+      <div class="valor">
+        <h3>Valor Total: R$
+          <span id="vlrTotal">{{totalValor()}}</span>
+        </h3>
+      </div>
 
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-          <button type="submit" [disabled]="instaCurtidasForm.invalid || qtd.value < 100" class="btn btn-block btn-default">Enviar curtidas</button>
+          <button *ngIf="carteira > totalValor()" (click)="enviarCurtida(instaCurtidasForm.value)" type="submit" [disabled]="instaCurtidasForm.invalid || qtd.value < 100"
+            class="btn btn-block btn-default">Enviar curtidas</button>
+            <p *ngIf="carteira < totalValor()">Opss você não pode comprar essa quantidade, diminua para que o botão habilite</p>
         </div>
       </div>
     </form>
