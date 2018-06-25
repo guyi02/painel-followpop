@@ -3,16 +3,16 @@
     <!-- Breadcrumbs-->
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        <span>Comentários Instagram</span>
+        <span>Curtidas Página Facebook </span>
       </li>
     </ol>
     <!-- Icon Cards-->
-    <form [formGroup]="instaComentariosForm" class="form-horizontal">
+    <form [formGroup]="FaceCurtidaspaginaForm" class="form-horizontal">
       <div class="form-group">
         <label for="url" class="col-sm-2 control-label">Url da postagem</label>
         <div class="col-sm-10">
           <input type="text" formControlName="link" class="form-control input-lg" id="url" placeholder="URL">
-          <span style="font-size: 0.9em; color: grey" id="helpBlock" class="help-block">Exemplo: https://instagram.com/justinbieber/</span>
+          <span style="font-size: 0.9em; color: grey" id="helpBlock" class="help-block">Exemplo: https://www.facebook.com/popsocketbrasil/ </span>
         </div>
       </div>
 
@@ -22,16 +22,6 @@
           <input #qtd type="number" formControlName="quantidade" minlength="100" id="qtd" class="form-control input-lg" aria-describedby="helpBlock">
           <span style="font-size: 0.9em; color: grey" id="helpBlock" class="help-block">A Quantidade deve terminar apartir de dois digitos 0 ex: 100, 500, 2000 etc.</span>
         </div>
-
-        
-      </div>
-
-      <div class="form-group">
-          <label for="comentarios" class="col-sm-2 control-label">Comentários </label>
-          <div class="col-sm-10">
-            <textarea class="form-control" id="exampleFormControlTextarea3" rows="7"></textarea>
-            <span style="font-size: 0.9em; color: grey" id="helpBlock" class="help-block">1 comentário por linha</span>
-          </div>
       </div>
 
       <div class="valor">
@@ -42,13 +32,12 @@
 
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-          <button *ngIf="carteira > totalValor()" (click)="enviarComentarios(instaComentariosForm.value)" type="submit" [disabled]="instaComentariosForm.invalid || qtd.value < 100"
-            class="btn btn-block btn-default">Enviar comentários</button>
+          <button *ngIf="carteira > totalValor()" (click)="enviarCurtida(FaceCurtidaspaginaForm.value)" type="submit" [disabled]="FaceCurtidaspaginaForm.invalid || qtd.value < 100"
+            class="btn btn-block btn-default">Enviar curtidas</button>
             <p *ngIf="carteira < totalValor()">Opss você não pode comprar essa quantidade, diminua para que o botão habilite</p>
         </div>
       </div>
     </form>
 
   </div>
-
 </div>

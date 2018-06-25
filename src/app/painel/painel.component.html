@@ -37,22 +37,8 @@
           </li>
         </ul>
       </li>
-      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponent" data-parent="#exampleAccordion">
-          <i class="fab fa-twitter-square"></i>
-          <span class="nav-link-text"> Twitter</span>
-        </a>
-        <ul class="sidenav-second-level collapse" id="collapseComponent">
-          <li>
-            <a href="navbar.html">
-              <i class="fab fa-twitter-square"></i> Curtidas Twitter</a>
-          </li>
-          <li>
-            <a href="cards.html">
-              <i class="fab fa-twitter-square"></i> Seguidores Twitter</a>
-          </li>
-        </ul>
-      </li>
+      
+     
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
         <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
           <i class="fab fa-facebook"></i>
@@ -60,18 +46,21 @@
         </a>
         <ul class="sidenav-second-level collapse" id="collapseExamplePages">
           <li>
-            <a href="login.html">
-              <i class="fab fa-facebook"></i> Curtidas em Postagem facebook</a>
+            <a [routerLink]="['face-curtidaspost']">
+              <i class="fab fa-facebook"></i> Curtidas em Foto/Postagem br</a>
           </li>
           <li>
-            <a href="register.html">
+            <a [routerLink]="['face-curtidasglobal']">
+              <i class="fab fa-facebook"></i> Curtidas em Foto/Postagem global</a>
+          </li>
+          <li>
+            <a [routerLink]="['face-curtidaspagina']">
               <i class="fab fa-facebook"></i> Curtidas em Pagina</a>
           </li>
           <li>
-            <a href="forgot-password.html">
+            <a [routerLink]="['face-seguidores']">
               <i class="fab fa-facebook"></i> Seguidores facebook</a>
           </li>
-
         </ul>
       </li>
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">

@@ -10,6 +10,10 @@ import { InstaCurtidasComponent } from "./painel/midia/insta-curtidas/insta-curt
 import { InstaSeguidoresComponent } from "./painel/midia/insta-seguidores/insta-seguidores.component";
 import { InstaStoriesComponent } from "./painel/midia/insta-stories/insta-stories.component";
 import { InstaComentariosComponent } from "./painel/midia/insta-comentarios/insta-comentarios.component";
+import { FaceCurtidaspostComponent } from "./painel/midia/face-curtidaspost/face-curtidaspost.component";
+import { FaceCurtidasglobalComponent } from "./painel/midia/face-curtidasglobal/face-curtidasglobal.component";
+import { FaceCurtidaspaginaComponent } from "./painel/midia/face-curtidaspagina/face-curtidaspagina.component";
+import { FaceSeguidoresComponent } from "./painel/midia/face-seguidores/face-seguidores.component";
 const router: Routes = [
     { path: '', component: LoginComponent },
     { path: 'login', component: LoginComponent },
@@ -22,7 +26,12 @@ const router: Routes = [
             { path: 'insta-curtidas', component: InstaCurtidasComponent },
             { path: 'insta-seguidores', component: InstaSeguidoresComponent },
             { path: 'insta-stories', component: InstaStoriesComponent },
-            { path: 'insta-comentarios', component: InstaComentariosComponent }
+            { path: 'insta-comentarios', component: InstaComentariosComponent},
+            { path: 'face-curtidaspost', component: FaceCurtidaspostComponent },
+            { path: 'face-curtidasglobal', component: FaceCurtidasglobalComponent },
+            { path: 'face-curtidaspagina', component: FaceCurtidaspaginaComponent },
+            { path: 'face-seguidores', component: FaceSeguidoresComponent },
+
         ]
     },
     { path: 'registrar', component: RegistrarComponent }

@@ -23,6 +23,10 @@ import { InstaSeguidoresComponent } from './painel/midia/insta-seguidores/insta-
 import { CommonModule, APP_BASE_HREF, LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { InstaStoriesComponent } from './painel/midia/insta-stories/insta-stories.component';
 import { InstaComentariosComponent } from './painel/midia/insta-comentarios/insta-comentarios.component';
+import { FaceCurtidaspostComponent } from './painel/midia/face-curtidaspost/face-curtidaspost.component';
+import { FaceCurtidasglobalComponent } from './painel/midia/face-curtidasglobal/face-curtidasglobal.component';
+import { FaceCurtidaspaginaComponent } from './painel/midia/face-curtidaspagina/face-curtidaspagina.component';
+import { FaceSeguidoresComponent } from './painel/midia/face-seguidores/face-seguidores.component';
 
 
 @NgModule({
@@ -36,7 +40,11 @@ import { InstaComentariosComponent } from './painel/midia/insta-comentarios/inst
     InstaCurtidasComponent,
     InstaSeguidoresComponent,
     InstaStoriesComponent,
-    InstaComentariosComponent
+    InstaComentariosComponent,
+    FaceCurtidaspostComponent,
+    FaceCurtidasglobalComponent,
+    FaceCurtidaspaginaComponent,
+    FaceSeguidoresComponent
   ],
   imports: [
     BrowserModule,
