@@ -8,8 +8,8 @@ import { FoundsComponent } from "./painel/founds/founds.component";
 import { DashboardComponent } from "./painel/dashboard/dashboard.component";
 import { InstaCurtidasComponent } from "./painel/midia/insta-curtidas/insta-curtidas.component";
 import { InstaSeguidoresComponent } from "./painel/midia/insta-seguidores/insta-seguidores.component";
-
-
+import { InstaStoriesComponent } from "./painel/midia/insta-stories/insta-stories.component";
+import { InstaComentariosComponent } from "./painel/midia/insta-comentarios/insta-comentarios.component";
 const router: Routes = [
     { path: '', component: LoginComponent },
     { path: 'login', component: LoginComponent },
@@ -21,6 +21,8 @@ const router: Routes = [
             { path: 'founds', component: FoundsComponent },
             { path: 'insta-curtidas', component: InstaCurtidasComponent },
             { path: 'insta-seguidores', component: InstaSeguidoresComponent },
+            { path: 'insta-stories', component: InstaStoriesComponent },
+            { path: 'insta-comentarios', component: InstaComentariosComponent }
         ]
     },
     { path: 'registrar', component: RegistrarComponent }

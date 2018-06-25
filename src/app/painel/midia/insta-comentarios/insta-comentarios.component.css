@@ -1,3 +1,10 @@
+@media only screen and (min-width: 1000px)
+ {  .btn{
+  width: 350px;
+}
+}
+
+
 .valor{
     margin: 15px 0 20px 12px;
 }
@@ -7,3 +14,4 @@
   width: 334px;
 
 }
+

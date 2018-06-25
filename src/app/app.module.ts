@@ -19,6 +19,8 @@ import { DashboardComponent } from './painel/dashboard/dashboard.component';
 import { InstaCurtidasComponent } from './painel/midia/insta-curtidas/insta-curtidas.component';
 import { InstaSeguidoresComponent } from './painel/midia/insta-seguidores/insta-seguidores.component';
 import { CommonModule, APP_BASE_HREF, LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { InstaStoriesComponent } from './painel/midia/insta-stories/insta-stories.component';
+import { InstaComentariosComponent } from './painel/midia/insta-comentarios/insta-comentarios.component';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { CommonModule, APP_BASE_HREF, LocationStrategy, HashLocationStrategy } f
     FoundsComponent,
     DashboardComponent,
     InstaCurtidasComponent,
-    InstaSeguidoresComponent
+    InstaSeguidoresComponent,
+    InstaStoriesComponent,
+    InstaComentariosComponent
   ],
   imports: [
     BrowserModule,

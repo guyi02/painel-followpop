@@ -4,33 +4,34 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { AuthService } from '../../../auth.service';
 import { Router } from '@angular/router';
 
+
 @Component({
-  selector: 'app-insta-seguidores',
-  templateUrl: './insta-seguidores.component.html',
-  styleUrls: ['./insta-seguidores.component.css']
+  selector: 'app-insta-stories',
+  templateUrl: './insta-stories.component.html',
+  styleUrls: ['./insta-stories.component.css']
 })
-export class InstaSeguidoresComponent implements OnInit {
+export class InstaStoriesComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private db: AngularFirestore, private fireService: AuthService, private router: Router) { }
 
-  instaSeguidoresForm: FormGroup
+  instaStoriesForm: FormGroup
   dolar: number = 3.80
   carteira: number
 
   ngOnInit() {
-    this.instaSeguidoresForm = this.fb.group({
+    this.instaStoriesForm = this.fb.group({
       link: this.fb.control('', [Validators.required, Validators.minLength(20)]),
       quantidade: this.fb.control('', [Validators.required, Validators.minLength(100), Validators.pattern('^[1-9]+[0-9]*00$')]),
       tipo: this.fb.control('br', Validators.required),
-      servico: this.fb.control('Seguidores Instagram', Validators.required),
+      servico: this.fb.control('Views Instagram', Validators.required),
     })
     this.verificaSaldo()
   }
 
   
   totalValor() {
-    const qtd = this.instaSeguidoresForm.controls.quantidade.value
-    const total = ((this.dolar / 1000) + 0.030) * qtd
+    const qtd = this.instaStoriesForm.controls.quantidade.value
+    const total = ((this.dolar / 1000) + 0.011) * qtd
     return Math.round(total)
   }
 
@@ -47,7 +48,7 @@ export class InstaSeguidoresComponent implements OnInit {
   }
 
 
-  enviarSeguidores(form) {
+  enviarViews(form) {
     const vlr = parseInt(document.getElementById('vlrTotal').innerHTML)
     this.fireService.verificaUserLogado().subscribe(user => {
       this.db.collection("pedidos").add({
