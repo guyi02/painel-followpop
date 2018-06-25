@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/fo
 import { AngularFirestore } from 'angularfire2/firestore';
 import { AuthService } from '../../../auth.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 
 
@@ -13,7 +14,11 @@ import { Router } from '@angular/router';
 })
 export class InstaCurtidasComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private db: AngularFirestore, private fireService: AuthService, private router: Router) { }
+  constructor(private fb: FormBuilder,
+     private db: AngularFirestore,
+      private fireService: AuthService,
+       private router: Router,
+      private toast: ToastrService) { }
 
   instaCurtidasForm: FormGroup
   dolar: number = 3.80
@@ -65,7 +70,11 @@ export class InstaCurtidasComponent implements OnInit {
         this.db.collection("users").doc(user.uid).set({
           carteira: subtracao
         }, { merge: true })
-        this.router.navigate(['/painel'])
+        setTimeout(() => {
+          this.toast.success('Seu pedido foi enviado, logo chegaram a seu perfil','sucesso')
+          this.router.navigate(['/painel'])
+        }, 2000);
+        
       })
     })
 

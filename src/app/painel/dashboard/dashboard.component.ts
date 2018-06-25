@@ -32,7 +32,7 @@ export class DashboardComponent implements OnInit {
   }
 
   meusPedidos(id) {
-    const list = this.db.collection('pedidos', ref => ref.where('id', '==', id))
+    const list = this.db.collection('pedidos', ref => ref.where('id', '==', id).orderBy('data', 'desc'))
     list.valueChanges().subscribe(data => {
       this.pedidos = data
     })
