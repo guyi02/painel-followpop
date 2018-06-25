@@ -29,7 +29,6 @@ export class DashboardComponent implements OnInit {
         })
       }
     )
-
   }
 
   meusPedidos(id) {
