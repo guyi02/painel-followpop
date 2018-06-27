@@ -14,6 +14,9 @@ import { FaceCurtidaspostComponent } from "./painel/midia/face-curtidaspost/face
 import { FaceCurtidasglobalComponent } from "./painel/midia/face-curtidasglobal/face-curtidasglobal.component";
 import { FaceCurtidaspaginaComponent } from "./painel/midia/face-curtidaspagina/face-curtidaspagina.component";
 import { FaceSeguidoresComponent } from "./painel/midia/face-seguidores/face-seguidores.component";
+import { YoutubeViewsComponent } from "./painel/midia/youtube-views/youtube-views.component";
+import { YoutubeLikesComponent } from "./painel/midia/youtube-likes/youtube-likes.component";
+import { YoutubeDislikesComponent } from "./painel/midia/youtube-dislikes/youtube-dislikes.component";   
 const router: Routes = [
     { path: '', component: LoginComponent },
     { path: 'login', component: LoginComponent },
@@ -31,6 +34,10 @@ const router: Routes = [
             { path: 'face-curtidasglobal', component: FaceCurtidasglobalComponent },
             { path: 'face-curtidaspagina', component: FaceCurtidaspaginaComponent },
             { path: 'face-seguidores', component: FaceSeguidoresComponent },
+            { path: 'youtube-views', component: YoutubeViewsComponent },
+            { path: 'youtube-likes', component: YoutubeLikesComponent },
+            { path: 'youtube-dislikes', component: YoutubeDislikesComponent },
+
 
         ]
     },
