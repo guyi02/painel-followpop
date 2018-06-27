@@ -30,6 +30,7 @@ import { FaceSeguidoresComponent } from './painel/midia/face-seguidores/face-seg
 import { YoutubeViewsComponent } from './painel/midia/youtube-views/youtube-views.component';
 import { YoutubeLikesComponent } from './painel/midia/youtube-likes/youtube-likes.component';
 import { YoutubeDislikesComponent } from './painel/midia/youtube-dislikes/youtube-dislikes.component';
+import { TermosComponent } from './painel/midia/termos/termos.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { YoutubeDislikesComponent } from './painel/midia/youtube-dislikes/youtub
     FaceSeguidoresComponent,
     YoutubeViewsComponent,
     YoutubeLikesComponent,
-    YoutubeDislikesComponent
+    YoutubeDislikesComponent,
+    TermosComponent
   ],
   imports: [
     BrowserModule,

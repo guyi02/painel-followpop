@@ -17,6 +17,7 @@ import { FaceSeguidoresComponent } from "./painel/midia/face-seguidores/face-seg
 import { YoutubeViewsComponent } from "./painel/midia/youtube-views/youtube-views.component";
 import { YoutubeLikesComponent } from "./painel/midia/youtube-likes/youtube-likes.component";
 import { YoutubeDislikesComponent } from "./painel/midia/youtube-dislikes/youtube-dislikes.component";   
+import { TermosComponent } from "./painel/midia/termos/termos.component";
 const router: Routes = [
     { path: '', component: LoginComponent },
     { path: 'login', component: LoginComponent },
@@ -37,6 +38,8 @@ const router: Routes = [
             { path: 'youtube-views', component: YoutubeViewsComponent },
             { path: 'youtube-likes', component: YoutubeLikesComponent },
             { path: 'youtube-dislikes', component: YoutubeDislikesComponent },
+            { path: 'termos', component: TermosComponent },
+
 
 
         ]
