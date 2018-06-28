@@ -18,12 +18,14 @@ export class LoginComponent implements OnInit {
 
   dataUser: User
   meuFormulario: FormGroup
+  emailPattern = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+
   constructor(private fb: FormBuilder, private authService: AuthService) {
   }
 
   createForm() {
     this.meuFormulario = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     })
   }

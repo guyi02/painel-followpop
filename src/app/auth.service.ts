@@ -68,7 +68,7 @@ export class AuthService {
   logarUsuario(authData: authUser) {
     this.angularFire.auth.signInWithEmailAndPassword(authData.email, authData.password)
       .then(() => {
-        this.toast.error('Tudo pronto, você está logado em nosso painel', 'Logado')
+        this.toast.success('Tudo pronto, você está logado em nosso painel', 'Logado')
       })
       .catch(err => { 
         this.toast.error(err, 'Erro')

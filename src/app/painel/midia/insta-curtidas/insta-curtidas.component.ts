@@ -15,10 +15,10 @@ import { ToastrService } from 'ngx-toastr';
 export class InstaCurtidasComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
-     private db: AngularFirestore,
-      private fireService: AuthService,
-       private router: Router,
-      private toast: ToastrService) { }
+    private db: AngularFirestore,
+    private fireService: AuthService,
+    private router: Router,
+    private toast: ToastrService) { }
 
   instaCurtidasForm: FormGroup
   dolar: number = 3.80
@@ -70,11 +70,10 @@ export class InstaCurtidasComponent implements OnInit {
         this.db.collection("users").doc(user.uid).set({
           carteira: subtracao
         }, { merge: true })
-        setTimeout(() => {
-          this.toast.success('Seu pedido foi enviado, logo chegaram a seu perfil','sucesso')
-          this.router.navigate(['/painel'])
-        }, 2000);
-        
+        this.router.navigate(['/painel'])
+        this.toast.success('Seu pedido foi enviado, logo chegaram a seu perfil', 'sucesso')
+      }).catch(err => {
+        this.toast.error(err, 'Erro')
       })
     })
 
