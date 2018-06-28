@@ -22,7 +22,7 @@ export class FaceCurtidasglobalComponent implements OnInit {
     this.FaceCurtidasglobalForm = this.fb.group({
       link: this.fb.control('', [Validators.required, Validators.minLength(20)]),
       quantidade: this.fb.control('', [Validators.required, Validators.minLength(100), Validators.pattern('^[1-9]+[0-9]*00$')]),
-      tipo: this.fb.control('br', Validators.required),
+      tipo: this.fb.control('global', Validators.required),
       servico: this.fb.control('Curtidas Facebook', Validators.required),
     })
     this.verificaSaldo()
@@ -30,7 +30,7 @@ export class FaceCurtidasglobalComponent implements OnInit {
 
   totalValor() {
     const qtd = this.FaceCurtidasglobalForm.controls.quantidade.value
-    const total = ((this.dolar / 1000) + 0.001) * qtd
+    const total = ((this.dolar / 1000) + 0.002) * qtd
     return Math.round(total)
   }
 

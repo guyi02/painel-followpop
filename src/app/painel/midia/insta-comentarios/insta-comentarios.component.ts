@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/fo
 import { AngularFirestore } from 'angularfire2/firestore';
 import { AuthService } from '../../../auth.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-insta-comentarios',
@@ -11,26 +12,31 @@ import { Router } from '@angular/router';
 })
 export class InstaComentariosComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private db: AngularFirestore, private fireService: AuthService, private router: Router) { }
+  constructor(private fb: FormBuilder,
+     private db: AngularFirestore, 
+     private fireService: AuthService, 
+     private router: Router,
+    private toast:ToastrService) { }
 
   instaComentariosForm: FormGroup
-  dolar: number = 3.80
   carteira: number
 
 
   ngOnInit() {
+
     this.instaComentariosForm = this.fb.group({
       link: this.fb.control('', [Validators.required, Validators.minLength(20)]),
-      quantidade: this.fb.control('', [Validators.required, Validators.minLength(100), Validators.pattern('^[1-9]+[0-9]*00$')]),
-      tipo: this.fb.control('br', Validators.required),
+      quantidade: this.fb.control('', [Validators.minLength(20)]),
+      area: this.fb.control('', [Validators.required, Validators.minLength(20)]),
+      tipo: this.fb.control('global', Validators.required),
       servico: this.fb.control('Comentarios Instagram', Validators.required),
     })
     this.verificaSaldo()
   }
 
   totalValor() {
-    const qtd = this.instaComentariosForm.controls.quantidade.value
-    const total = ((this.dolar / 1000) + 0.012) * qtd
+    const qtd = this.countArea()
+    const total = qtd * 0.20
     return Math.round(total)
   }
 
@@ -52,7 +58,8 @@ export class InstaComentariosComponent implements OnInit {
       this.db.collection("pedidos").add({
         data: new Date(),
         link: form.link,
-        quantidade: form.quantidade,
+        quantidade: this.countArea(),
+        comentarios: form.area,
         servico: form.servico,
         status: 'pendente',
         tipo: form.tipo,
@@ -64,10 +71,14 @@ export class InstaComentariosComponent implements OnInit {
           carteira: subtracao
         }, { merge: true })
         this.router.navigate(['/painel'])
+        this.toast.success('Seu pedido foi enviado, logo serão inseridos em seu perfil', 'sucesso')
       })
     })
-
-
   }
 
+
+  countArea() {
+    const lines = this.instaComentariosForm.get('area').value.split('\n')
+    return lines.length
+  }
 }

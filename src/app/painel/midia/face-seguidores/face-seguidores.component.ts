@@ -30,7 +30,7 @@ export class FaceSeguidoresComponent implements OnInit {
 
   totalValor() {
     const qtd = this.FaceSeguidoresForm.controls.quantidade.value
-    const total = ((this.dolar / 1000) + 0.001) * qtd
+    const total = ((this.dolar / 1000) + 0.014) * qtd
     return Math.round(total)
   }
 

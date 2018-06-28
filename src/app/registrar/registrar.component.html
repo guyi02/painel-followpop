@@ -40,8 +40,8 @@
           <button type="submit" [disabled]="formRegistro.invalid" class="btn btn-primary btn-block" class="btn btn-primary btn-block">Registrar</button>
         </form>
         <div class="text-center">
-          <a class="d-block small mt-3" href="register.html">Voltar para login</a>
-          <a class="d-block small" href="forgot-password.html">Esqueci minha senha</a>
+          <a class="d-block small mt-3" [routerLink]="['/login']">Voltar para login</a>
+          <a class="d-block small" [routerLink]="['/senha']">Esqueci minha senha</a>
         </div>
       </div>
     </div>

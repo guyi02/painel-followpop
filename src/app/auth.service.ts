@@ -71,7 +71,7 @@ export class AuthService {
         this.toast.success('Tudo pronto, você está logado em nosso painel', 'Logado')
       })
       .catch(err => { 
-        this.toast.error(err, 'Erro')
+        this.toast.error('Ops, tente novamente', 'Erro')
        })
   }
 

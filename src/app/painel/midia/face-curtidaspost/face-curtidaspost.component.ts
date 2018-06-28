@@ -30,7 +30,7 @@ export class FaceCurtidaspostComponent implements OnInit {
 
   totalValor() {
     const qtd = this.FaceCurtidaspostForm.controls.quantidade.value
-    const total = ((this.dolar / 1000) + 0.001) * qtd
+    const total = ((this.dolar / 1000) + 0.002) * qtd
     return Math.round(total)
   }
 

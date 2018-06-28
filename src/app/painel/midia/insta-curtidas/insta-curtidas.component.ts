@@ -71,7 +71,7 @@ export class InstaCurtidasComponent implements OnInit {
           carteira: subtracao
         }, { merge: true })
         this.router.navigate(['/painel'])
-        this.toast.success('Seu pedido foi enviado, logo chegaram a seu perfil', 'sucesso')
+        this.toast.success('Seu pedido foi enviado, logo serão inseridos em seu perfil', 'sucesso')
       }).catch(err => {
         this.toast.error(err, 'Erro')
       })
