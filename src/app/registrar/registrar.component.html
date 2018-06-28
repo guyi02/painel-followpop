@@ -3,32 +3,41 @@
     <div class="card card-login mx-auto mt-5">
       <div class="card-header">Formulário de Registro</div>
       <div class="card-body">
-        <form [formGroup]="formRegistro" (ngSubmit)="registrar()">
+        <form [formGroup]="formRegistro" (ngSubmit)="registrar()" novalidate>
           <div class="form-group">
-            <input class="form-control" type="text" formControlName="nome" name="nome" aria-describedby="emailHelp" placeholder="Nome">
+            <input class="form-control" type="text" formControlName="nome" [class.is-invalid]="formRegistro.get('nome').invalid && formRegistro.get('nome').touched"
+            [class.is-valid]="formRegistro.get('nome').valid" name="nome" aria-describedby="emailHelp" placeholder="Nome">
           </div>
 
           <div class="form-group">
-            <input class="form-control" type="text" formControlName="sobrenome" name="sobrenome" aria-describedby="emailHelp" placeholder="Sobrenome">
+            <input class="form-control" type="text" formControlName="sobrenome"
+            [class.is-invalid]="formRegistro.get('sobrenome').invalid && formRegistro.get('sobrenome').touched"
+            [class.is-valid]="formRegistro.get('sobrenome').valid" name="sobrenome" aria-describedby="emailHelp" placeholder="Sobrenome">
           </div>
 
           <div class="form-group">
-            <input class="form-control" type="tel" formControlName="celular" name="celular" aria-describedby="emailHelp" placeholder="Celular">
+            <input class="form-control" type="tel" formControlName="celular" name="celular" 
+            [class.is-invalid]="formRegistro.get('celular').invalid && formRegistro.get('celular').touched"
+            [class.is-valid]="formRegistro.get('celular').valid" aria-describedby="emailHelp" placeholder="Celular">
           </div>
 
           <div class="form-group">
-            <input class="form-control" type="email" formControlName="email" name="email" aria-describedby="emailHelp" placeholder="Email">
+            <input class="form-control" type="email" formControlName="email" name="email" 
+            [class.is-invalid]="formRegistro.get('email').invalid && formRegistro.get('email').touched"
+            [class.is-valid]="formRegistro.get('email').valid" aria-describedby="emailHelp" placeholder="Email">
           </div>
 
           <div class="form-group">
-            <input class="form-control" formControlName="password" name="password" type="password" placeholder="Senha">
+            <input class="form-control" formControlName="password" name="password" [class.is-invalid]="!formRegistro.get('password').valid && formRegistro.get('password').touched" 
+            [class.is-valid]="formRegistro.get('password').valid" type="password" placeholder="Senha">
           </div>
 
           <div class="form-group">
-            <input class="form-control" formControlName="password2" name="password2" type="password" placeholder="Repita senha">
+            <input class="form-control" formControlName="password2" name="password2" [class.is-invalid]="!formRegistro.get('password2').valid && formRegistro.get('password2').touched" 
+            [class.is-valid]="formRegistro.get('password2').valid" type="password" placeholder="Repita senha">
           </div>
 
-          <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+          <button type="submit" [disabled]="formRegistro.invalid" class="btn btn-primary btn-block" class="btn btn-primary btn-block">Registrar</button>
         </form>
         <div class="text-center">
           <a class="d-block small mt-3" href="register.html">Voltar para login</a>

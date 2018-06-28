@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators, AbstractControl } from "@angular/forms";
 import { AuthService } from '../auth.service';
+
 
 interface User {
   nome: string,
@@ -23,18 +24,31 @@ export class RegistrarComponent implements OnInit {
   dataUser: User
   formRegistro: FormGroup
   buttonDisable = false
+  emailPattern = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
 
   constructor(private fb: FormBuilder, private authService: AuthService) {
   }
   createForm() {
     this.formRegistro = this.fb.group({
-      nome: ['', [Validators.required, Validators.email]],
-      sobrenome: ['', [Validators.required]],
-      celular: ['', Validators.required],
-      email: ['', Validators.required],
+      nome: ['', [Validators.required, Validators.minLength(2)]],
+      sobrenome: ['', [Validators.required, Validators.minLength(2)]],
+      celular: ['', [Validators.required, Validators.minLength(7)]],
+      email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       password2: ['', [Validators.required, Validators.minLength(6)]]
+    }, {
+      validator: RegistrarComponent.comparaSenha
     })
+  }
+
+  static comparaSenha(form: AbstractControl) {
+    let senha = form.get('password').value;
+    let senha2 = form.get('password2').value;
+    if (senha != senha2) {
+      form.get('password2').setErrors({ MatchPassword: true })
+    } else {
+      return null
+    }
   }
 
   ngOnInit() {
@@ -42,7 +56,9 @@ export class RegistrarComponent implements OnInit {
   }
 
   registrar() {
-    this.authService.registrarUsuario(this.formRegistro.value)
+    if(this.authService.registrarUsuario(this.formRegistro.value)){
+
+    }
   }
 
 
