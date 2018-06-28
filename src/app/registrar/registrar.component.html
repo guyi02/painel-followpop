@@ -5,11 +5,11 @@
       <div class="card-body">
         <form [formGroup]="formRegistro" (ngSubmit)="registrar()" novalidate>
           <div class="form-group">
-            <input class="form-control" type="text" formControlName="nome" [class.is-invalid]="formRegistro.get('nome').invalid && formRegistro.get('nome').touched"
+            <input  id="inputdefault" class="form-control" type="text" formControlName="nome" [class.is-invalid]="formRegistro.get('nome').invalid && formRegistro.get('nome').touched"
             [class.is-valid]="formRegistro.get('nome').valid" name="nome" aria-describedby="emailHelp" placeholder="Nome">
           </div>
 
-          <div class="form-group">
+          <div class="form-group ">
             <input class="form-control" type="text" formControlName="sobrenome"
             [class.is-invalid]="formRegistro.get('sobrenome').invalid && formRegistro.get('sobrenome').touched"
             [class.is-valid]="formRegistro.get('sobrenome').valid" name="sobrenome" aria-describedby="emailHelp" placeholder="Sobrenome">

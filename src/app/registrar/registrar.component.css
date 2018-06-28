@@ -1,0 +1,56 @@
+@media only screen and (min-width: 320px)
+ {  .form-control{
+  width: 248px;
+}
+}
+@media only screen and (min-width: 360px)
+ {  .form-control{
+  width: 290px;
+}
+}
+@media only screen and (min-width: 375px)
+ {  .form-control{
+  width: 302px;
+}
+}
+@media only screen and (min-width: 411px)
+ {  .form-control{
+  width: 340px;
+}
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 768px) {
+  .form-control{
+    width: 358px;}
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+
+
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .form-control{
+    width: 358px;}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) 
+    
+    {
+        .form-control{
+          width: 358px;}
+      }
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    
+        
+
+}
