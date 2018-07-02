@@ -13,13 +13,14 @@ import { ToastrService } from 'ngx-toastr';
 export class InstaComentariosComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
-     private db: AngularFirestore, 
-     private fireService: AuthService, 
-     private router: Router,
-    private toast:ToastrService) { }
+    private db: AngularFirestore,
+    private fireService: AuthService,
+    private router: Router,
+    private toast: ToastrService) { }
 
   instaComentariosForm: FormGroup
   carteira: number
+  nome: string
 
 
   ngOnInit() {
@@ -28,8 +29,8 @@ export class InstaComentariosComponent implements OnInit {
       link: this.fb.control('', [Validators.required, Validators.minLength(20)]),
       quantidade: this.fb.control('', [Validators.minLength(20)]),
       area: this.fb.control('', [Validators.required, Validators.minLength(20)]),
-      tipo: this.fb.control('global', Validators.required),
-      servico: this.fb.control('Comentarios Instagram', Validators.required),
+      tipo: this.fb.control('ig-cm-br', Validators.required),
+      servico: this.fb.control('Comentarios Instagram Br', Validators.required),
     })
     this.verificaSaldo()
   }
@@ -43,7 +44,8 @@ export class InstaComentariosComponent implements OnInit {
   verificaSaldo() {
     this.fireService.verificaUserLogado().subscribe(user => {
       this.db.collection("users").doc(user.uid).valueChanges().subscribe(res => {
-        this.carteira = res['carteira']
+        this.carteira = res['carteira'];
+        this.nome = res['nome']
       })
     })
   }
@@ -64,7 +66,8 @@ export class InstaComentariosComponent implements OnInit {
         status: 'pendente',
         tipo: form.tipo,
         valor: vlr,
-        id: user.uid
+        id: user.uid,
+        nome: this.nome
       }).then(() => {
         const subtracao = this.carteira - vlr
         this.db.collection("users").doc(user.uid).set({

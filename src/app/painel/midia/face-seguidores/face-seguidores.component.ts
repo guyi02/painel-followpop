@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/fo
 import { AngularFirestore } from 'angularfire2/firestore';
 import { AuthService } from '../../../auth.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-face-seguidores',
@@ -11,19 +12,20 @@ import { Router } from '@angular/router';
 })
 export class FaceSeguidoresComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private db: AngularFirestore, private fireService: AuthService, private router: Router) { }
+  constructor(private fb: FormBuilder, private db: AngularFirestore, private fireService: AuthService, private router: Router, private toast: ToastrService) { }
 
   FaceSeguidoresForm: FormGroup
   dolar: number = 3.80
   carteira: number
+  nome: string
 
 
   ngOnInit() {
     this.FaceSeguidoresForm = this.fb.group({
       link: this.fb.control('', [Validators.required, Validators.minLength(20)]),
       quantidade: this.fb.control('', [Validators.required, Validators.minLength(100), Validators.pattern('^[1-9]+[0-9]*00$')]),
-      tipo: this.fb.control('br', Validators.required),
-      servico: this.fb.control('Seguidores Facebook', Validators.required),
+      tipo: this.fb.control('fb-fl-gl', Validators.required),
+      servico: this.fb.control('Seguidores Facebook Gl', Validators.required),
     })
     this.verificaSaldo()
   }
@@ -37,7 +39,8 @@ export class FaceSeguidoresComponent implements OnInit {
   verificaSaldo() {
     this.fireService.verificaUserLogado().subscribe(user => {
       this.db.collection("users").doc(user.uid).valueChanges().subscribe(res => {
-        this.carteira = res['carteira']
+        this.carteira = res['carteira'];
+        this.nome = res['nome']
       })
     })
   }
@@ -57,13 +60,15 @@ export class FaceSeguidoresComponent implements OnInit {
         status: 'pendente',
         tipo: form.tipo,
         valor: vlr,
-        id: user.uid
+        id: user.uid,
+        nome: this.nome
       }).then(() => {
         const subtracao = this.carteira - vlr
         this.db.collection("users").doc(user.uid).set({
           carteira: subtracao
         }, { merge: true })
         this.router.navigate(['/painel'])
+        this.toast.success('Seu pedido foi enviado, logo serão inseridos em seu perfil', 'sucesso')
       })
     })
 

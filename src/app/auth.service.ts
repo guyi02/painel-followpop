@@ -70,9 +70,9 @@ export class AuthService {
       .then(() => {
         this.toast.success('Tudo pronto, você está logado em nosso painel', 'Logado')
       })
-      .catch(err => { 
+      .catch(err => {
         this.toast.error('Ops, tente novamente', 'Erro')
-       })
+      })
   }
 
   logout() {
@@ -94,5 +94,6 @@ export class AuthService {
       .catch(error => console.log(error)
       )
   }
+
 
 }

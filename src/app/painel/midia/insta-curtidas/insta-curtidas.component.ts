@@ -23,14 +23,15 @@ export class InstaCurtidasComponent implements OnInit {
   instaCurtidasForm: FormGroup
   dolar: number = 3.80
   carteira: number
+  nome: string
 
 
   ngOnInit() {
     this.instaCurtidasForm = this.fb.group({
       link: this.fb.control('', [Validators.required, Validators.minLength(20)]),
       quantidade: this.fb.control('', [Validators.required, Validators.minLength(100), Validators.pattern('^[1-9]+[0-9]*00$')]),
-      tipo: this.fb.control('br', Validators.required),
-      servico: this.fb.control('Curtidas Instagram', Validators.required),
+      tipo: this.fb.control('ig-lk-br', Validators.required),
+      servico: this.fb.control('Curtidas Instagram br', Validators.required),
     })
     this.verificaSaldo()
   }
@@ -44,7 +45,8 @@ export class InstaCurtidasComponent implements OnInit {
   verificaSaldo() {
     this.fireService.verificaUserLogado().subscribe(user => {
       this.db.collection("users").doc(user.uid).valueChanges().subscribe(res => {
-        this.carteira = res['carteira']
+        this.carteira = res['carteira'];
+        this.nome = res['nome']
       })
     })
   }
@@ -64,7 +66,8 @@ export class InstaCurtidasComponent implements OnInit {
         status: 'pendente',
         tipo: form.tipo,
         valor: vlr,
-        id: user.uid
+        id: user.uid,
+        nome: this.nome
       }).then(() => {
         const subtracao = this.carteira - vlr
         this.db.collection("users").doc(user.uid).set({
