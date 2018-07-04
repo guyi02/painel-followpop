@@ -95,5 +95,14 @@ export class AuthService {
       )
   }
 
+  recuperaSenha(email: string) {
+    this.angularFire.auth.sendPasswordResetEmail(email).then(res => {
+      this.toast.success('Enviamos para seu email um endereço de redefinição de senha', 'Feito');
+      this.router.navigate(['/login'])
+    }).catch(err => {
+      this.toast.error('Tem certeza que cadastrou este email?', 'Opss')
+    })
+  }
+
 
 }

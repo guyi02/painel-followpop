@@ -16,8 +16,10 @@ import { FaceCurtidaspaginaComponent } from "./painel/midia/face-curtidaspagina/
 import { FaceSeguidoresComponent } from "./painel/midia/face-seguidores/face-seguidores.component";
 import { YoutubeViewsComponent } from "./painel/midia/youtube-views/youtube-views.component";
 import { YoutubeLikesComponent } from "./painel/midia/youtube-likes/youtube-likes.component";
-import { YoutubeDislikesComponent } from "./painel/midia/youtube-dislikes/youtube-dislikes.component";   
+import { YoutubeDislikesComponent } from "./painel/midia/youtube-dislikes/youtube-dislikes.component";
 import { TermosComponent } from "./painel/midia/termos/termos.component";
+import { DuvidasComponent } from "./painel/dashboard/duvidas/duvidas.component";
+import { ForgotComponent } from "./forgot/forgot.component";
 const router: Routes = [
     { path: '', component: LoginComponent },
     { path: 'login', component: LoginComponent },
@@ -30,7 +32,7 @@ const router: Routes = [
             { path: 'insta-curtidas', component: InstaCurtidasComponent },
             { path: 'insta-seguidores', component: InstaSeguidoresComponent },
             { path: 'insta-stories', component: InstaStoriesComponent },
-            { path: 'insta-comentarios', component: InstaComentariosComponent},
+            { path: 'insta-comentarios', component: InstaComentariosComponent },
             { path: 'face-curtidaspost', component: FaceCurtidaspostComponent },
             { path: 'face-curtidasglobal', component: FaceCurtidasglobalComponent },
             { path: 'face-curtidaspagina', component: FaceCurtidaspaginaComponent },
@@ -39,12 +41,14 @@ const router: Routes = [
             { path: 'youtube-likes', component: YoutubeLikesComponent },
             { path: 'youtube-dislikes', component: YoutubeDislikesComponent },
             { path: 'termos', component: TermosComponent },
+            { path: 'duvidas', component: DuvidasComponent },
 
 
 
         ]
     },
-    { path: 'registrar', component: RegistrarComponent }
+    { path: 'registrar', component: RegistrarComponent },
+    { path: 'minha-senha', component: ForgotComponent }
 ]
 
 @NgModule({

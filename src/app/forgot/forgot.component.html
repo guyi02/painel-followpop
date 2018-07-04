@@ -1,0 +1,18 @@
+<div class="bg-dark">
+  <div class="container">
+    <div class="card card-login mx-auto mt-5">
+      <div class="card-header">Digite seu email</div>
+      <div class="card-body">
+        <form [formGroup]="forgotForm" (ngSubmit)="forgotPassword()">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Endereço de email</label>
+            <input class="form-control" type="email" formControlName="email" name="email" [class.is-invalid]="forgotForm.get('email').invalid && forgotForm.get('email').touched"
+              [class.is-valid]="forgotForm.get('email').valid" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+          </div>
+          <button type="submit" [disabled]="forgotForm.invalid" class="btn btn-primary btn-block">Recuperar senha</button>
+          <button [routerLink]="['/login']" class="btn btn-primary">Voltar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

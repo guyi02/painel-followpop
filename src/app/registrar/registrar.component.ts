@@ -37,8 +37,8 @@ export class RegistrarComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]],
       password2: ['', [Validators.required, Validators.minLength(6)]]
     }, {
-      validator: RegistrarComponent.comparaSenha
-    })
+        validator: RegistrarComponent.comparaSenha
+      })
   }
 
   static comparaSenha(form: AbstractControl) {
@@ -56,9 +56,7 @@ export class RegistrarComponent implements OnInit {
   }
 
   registrar() {
-    if(this.authService.registrarUsuario(this.formRegistro.value)){
-
-    }
+    this.authService.registrarUsuario(this.formRegistro.value)
   }
 
 
