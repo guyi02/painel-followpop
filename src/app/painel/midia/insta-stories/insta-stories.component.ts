@@ -16,7 +16,9 @@ export class InstaStoriesComponent implements OnInit {
   constructor(private fb: FormBuilder, private db: AngularFirestore, private fireService: AuthService, private router: Router, private toast: ToastrService) { }
 
   instaStoriesForm: FormGroup
-  dolar: number = 3.80
+  dolar: number = 4
+  vlrPorMil: number = 0.5
+  lucro: number = 6
   carteira: number
   nome: string
 
@@ -33,7 +35,7 @@ export class InstaStoriesComponent implements OnInit {
 
   totalValor() {
     const qtd = this.instaStoriesForm.controls.quantidade.value
-    const total = ((this.dolar / 1000) + 0.011) * qtd
+    const total = ((this.vlrPorMil / 1000) * qtd) * this.dolar * this.lucro
     return Math.round(total)
   }
 

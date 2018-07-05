@@ -12,12 +12,14 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class FaceCurtidasglobalComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private db: AngularFirestore, private fireService: AuthService, private router: Router, private toast:ToastrService) { }
+  constructor(private fb: FormBuilder, private db: AngularFirestore, private fireService: AuthService, private router: Router, private toast: ToastrService) { }
 
   FaceCurtidasglobalForm: FormGroup
-  dolar: number = 3.80
+  dolar: number = 4
+  vlrPorMil: number = 0.80
+  lucro: number = 3
   carteira: number
-  nome:string
+  nome: string
 
 
   ngOnInit() {
@@ -32,7 +34,7 @@ export class FaceCurtidasglobalComponent implements OnInit {
 
   totalValor() {
     const qtd = this.FaceCurtidasglobalForm.controls.quantidade.value
-    const total = ((this.dolar / 1000) + 0.002) * qtd
+    const total = ((this.vlrPorMil / 1000) * qtd) * this.dolar * this.lucro
     return Math.round(total)
   }
 

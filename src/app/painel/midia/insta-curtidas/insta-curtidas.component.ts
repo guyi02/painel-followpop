@@ -21,7 +21,9 @@ export class InstaCurtidasComponent implements OnInit {
     private toast: ToastrService) { }
 
   instaCurtidasForm: FormGroup
-  dolar: number = 3.80
+  dolar: number = 4
+  vlrPorMil: number = 0.5
+  lucro: number = 4.2
   carteira: number
   nome: string
 
@@ -38,7 +40,7 @@ export class InstaCurtidasComponent implements OnInit {
 
   totalValor() {
     const qtd = this.instaCurtidasForm.controls.quantidade.value
-    const total = ((this.dolar / 1000) + 0.004) * qtd
+    const total = ((this.vlrPorMil / 1000) * qtd) * this.dolar * this.lucro
     return Math.round(total)
   }
 

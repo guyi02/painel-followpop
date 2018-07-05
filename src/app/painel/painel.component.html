@@ -37,8 +37,8 @@
           </li>
         </ul>
       </li>
-      
-     
+
+
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
         <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
           <i class="fab fa-facebook"></i>
@@ -71,7 +71,7 @@
         <ul class="sidenav-second-level collapse" id="collapseMulti">
           <li>
             <a [routerLink]="['youtube-views']">
-              <i class="fab fa-youtube"></i> Visualizações Youtube</a>
+              <i class="fab fa-youtube"></i> Visualizações Youtube Br</a>
           </li>
           <li>
             <a [routerLink]="['youtube-likes']">
@@ -82,6 +82,11 @@
               <i class="fab fa-youtube"></i> Youtube Dislikes</a>
           </li>
 
+          <li>
+            <a [routerLink]="['youtube-subscribe']">
+              <i class="fab fa-youtube"></i> Youtube Inscritos</a>
+          </li>
+
         </ul>
       </li>
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
@@ -89,13 +94,6 @@
           <i class="fas fa-book"></i>
           <span class="nav-link-text"> Termos de uso</span>
         </a>
-
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-          <a class="nav-link" href="#">
-            <i class="fas fa-exclamation-triangle"></i>
-            <span class="nav-link-text"> Tenho um problema</span>
-          </a>
-        </li>
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
           <a class="nav-link" href="http://api.whatsapp.com/send?1=pt_BR&phone=5513991122174">
@@ -110,7 +108,7 @@
     <ul class="navbar-nav ml-auto">
       <li *ngIf="!isAuth" class="nav-item">
         <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-          <i class="fas fa-sign-out-alt"></i> Logout</a>
+          <i class="fas fa-sign-out-alt"></i> Sair</a>
       </li>
     </ul>
 

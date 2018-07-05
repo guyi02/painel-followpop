@@ -20,8 +20,8 @@
       <div class="form-group">
         <label for="qtd" class="col-sm-2 control-label">Quantidade</label>
         <div class="col-sm-10">
-          <input #qtd type="number" formControlName="quantidade" [value]="countArea()" disabled minlength="20" id="qtd" class="form-control input-lg" aria-describedby="helpBlock">
-          <span style="font-size: 0.9em; color: grey" id="helpBlock" class="help-block">A quantidade mínima deve ser 20</span>
+          <input #qtd type="number" formControlName="quantidade" [value]="countArea()" disabled minlength="10" id="qtd" class="form-control input-lg" aria-describedby="helpBlock">
+          <span style="font-size: 0.9em; color: grey" id="helpBlock" class="help-block">A quantidade mínima deve ser 10</span>
         </div>
 
         
@@ -44,9 +44,9 @@
 
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-          <button *ngIf="carteira > totalValor()" (click)="enviarComentarios(instaComentariosForm.value)" type="submit" [disabled]="instaComentariosForm.invalid || qtd.value < 20"
+          <button *ngIf="carteira > totalValor()" (click)="enviarComentarios(instaComentariosForm.value)" type="submit" [disabled]="instaComentariosForm.invalid || qtd.value < 10"
             class="btn btn-block btn-default">Enviar comentários</button>
-            <p *ngIf="carteira < totalValor()">Opss você não pode comprar essa quantidade, diminua para que o botão habilite</p>
+            <p *ngIf="carteira < totalValor()">Saldo insuficiente</p>
         </div>
       </div>
     </form>

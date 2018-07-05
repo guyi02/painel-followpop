@@ -15,7 +15,9 @@ export class InstaSeguidoresComponent implements OnInit {
   constructor(private fb: FormBuilder, private db: AngularFirestore, private fireService: AuthService, private router: Router, private toast: ToastrService) { }
 
   instaSeguidoresForm: FormGroup
-  dolar: number = 3.80
+  dolar: number = 4
+  vlrPorMil: number = 4.80
+  lucro: number = 1.4
   carteira: number
   nome: string
 
@@ -32,7 +34,7 @@ export class InstaSeguidoresComponent implements OnInit {
 
   totalValor() {
     const qtd = this.instaSeguidoresForm.controls.quantidade.value
-    const total = ((this.dolar / 1000) + 0.030) * qtd
+    const total = ((this.vlrPorMil / 1000) * qtd) * this.dolar * this.lucro
     return Math.round(total)
   }
 

@@ -16,7 +16,9 @@ export class YoutubeDislikesComponent implements OnInit {
   constructor(private fb: FormBuilder, private db: AngularFirestore, private fireService: AuthService, private router: Router, private toast: ToastrService) { }
 
   YoutubeDislikesForm: FormGroup
-  dolar: number = 3.80
+  dolar: number = 4
+  vlrPorMil: number = 2
+  lucro: number = 1.6
   carteira: number
   nome: string
 
@@ -24,7 +26,7 @@ export class YoutubeDislikesComponent implements OnInit {
     this.YoutubeDislikesForm = this.fb.group({
       link: this.fb.control('', [Validators.required, Validators.minLength(20)]),
       quantidade: this.fb.control('', [Validators.required, Validators.minLength(100), Validators.pattern('^[1-9]+[0-9]*00$')]),
-      tipo: this.fb.control('yt-gl', Validators.required),
+      tipo: this.fb.control('yt-dsl-gl', Validators.required),
       servico: this.fb.control('Youtube Dislikes', Validators.required),
     })
     this.verificaSaldo()
@@ -33,7 +35,7 @@ export class YoutubeDislikesComponent implements OnInit {
 
   totalValor() {
     const qtd = this.YoutubeDislikesForm.controls.quantidade.value
-    const total = ((this.dolar / 1000) + 0.011) * qtd
+    const total = ((this.vlrPorMil / 1000) * qtd) * this.dolar * this.lucro
     return Math.round(total)
   }
 

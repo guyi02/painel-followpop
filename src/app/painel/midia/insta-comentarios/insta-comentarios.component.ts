@@ -19,6 +19,9 @@ export class InstaComentariosComponent implements OnInit {
     private toast: ToastrService) { }
 
   instaComentariosForm: FormGroup
+  dolar: number = 4
+  vlrPorMil: number = 0.80
+  lucro: number = 3
   carteira: number
   nome: string
 
@@ -37,7 +40,7 @@ export class InstaComentariosComponent implements OnInit {
 
   totalValor() {
     const qtd = this.countArea()
-    const total = qtd * 0.20
+    const total = (this.vlrPorMil/ 20) * this.lucro * this.dolar * qtd
     return Math.round(total)
   }
 

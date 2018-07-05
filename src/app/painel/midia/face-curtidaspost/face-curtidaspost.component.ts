@@ -15,7 +15,9 @@ export class FaceCurtidaspostComponent implements OnInit {
   constructor(private fb: FormBuilder, private db: AngularFirestore, private fireService: AuthService, private router: Router, private toast: ToastrService) { }
 
   FaceCurtidaspostForm: FormGroup
-  dolar: number = 3.80
+  dolar: number = 4
+  vlrPorMil: number = 0.5
+  lucro: number = 6
   carteira: number
   nome: string
 
@@ -32,7 +34,7 @@ export class FaceCurtidaspostComponent implements OnInit {
 
   totalValor() {
     const qtd = this.FaceCurtidaspostForm.controls.quantidade.value
-    const total = ((this.dolar / 1000) + 0.002) * qtd
+    const total = ((this.vlrPorMil / 1000) * qtd) * this.dolar * this.lucro
     return Math.round(total)
   }
 

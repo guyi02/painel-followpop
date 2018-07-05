@@ -34,7 +34,7 @@
         <div class="col-sm-offset-2 col-sm-10">
           <button *ngIf="carteira > totalValor()" (click)="enviarCurtida(FaceCurtidasglobalForm.value)" type="submit" [disabled]="FaceCurtidasglobalForm.invalid || qtd.value < 100"
             class="btn btn-block btn-default">Enviar curtidas</button>
-            <p *ngIf="carteira < totalValor()">Opss você não pode comprar essa quantidade, diminua para que o botão habilite</p>
+            <p *ngIf="carteira < totalValor()">Saldo insuficiente</p>
         </div>
       </div>
     </form>
