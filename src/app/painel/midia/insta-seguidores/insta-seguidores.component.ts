@@ -20,6 +20,7 @@ export class InstaSeguidoresComponent implements OnInit {
   lucro: number = 1.4
   carteira: number
   nome: string
+ 
 
   ngOnInit() {
     this.instaSeguidoresForm = this.fb.group({

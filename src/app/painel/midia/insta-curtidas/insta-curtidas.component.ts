@@ -26,11 +26,12 @@ export class InstaCurtidasComponent implements OnInit {
   lucro: number = 4.2
   carteira: number
   nome: string
+  instaReg = /^(.*instagram.com\/p\/)(.*)[\/]/
 
 
   ngOnInit() {
     this.instaCurtidasForm = this.fb.group({
-      link: this.fb.control('', [Validators.required, Validators.minLength(20)]),
+      link: this.fb.control('', [Validators.required, Validators.minLength(20), Validators.pattern(this.instaReg)]),
       quantidade: this.fb.control('', [Validators.required, Validators.minLength(100), Validators.pattern('^[1-9]+[0-9]*00$')]),
       tipo: this.fb.control('ig-lk-br', Validators.required),
       servico: this.fb.control('Curtidas Instagram br', Validators.required),
