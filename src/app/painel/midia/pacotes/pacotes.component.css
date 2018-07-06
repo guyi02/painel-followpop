@@ -1,0 +1,55 @@
+
+@media only screen and (min-width: 320px)
+{   .form-control[_ngcontent-c4]{
+ width: 250px;
+}
+}
+
+@media only screen and (min-width: 360px)
+{  .form-control[_ngcontent-c4]{
+ width: 250px;
+}
+}
+@media only screen and (min-width: 320px)
+{  .form-control[_ngcontent-c4]{
+ width: 250px;
+}
+}
+@media only screen and (min-width: 360px)
+{   .form-control[_ngcontent-c4]{
+ width: 250px;
+}
+}
+@media only screen and (min-width: 375px)
+{  .form-control[_ngcontent-c4]{
+ width: 250px;
+}
+}
+@media only screen and (min-width: 411px)
+{   .form-control[_ngcontent-c4]{
+ width: 250px;
+}
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 768px) {
+ .form-control[_ngcontent-c4]{
+   width: 196px !important;}
+}
+
+.form-control[_ngcontent-c4]{
+
+width: 250px;
+
+}
+
+.btn{
+
+margin: 0px;
+border-color: none;
+margin-top: 10px;
+margin-left: 70px;
+}
+
+
+
+    

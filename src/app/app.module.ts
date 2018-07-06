@@ -34,6 +34,7 @@ import { TermosComponent } from './painel/midia/termos/termos.component';
 import { DuvidasComponent } from './painel/dashboard/duvidas/duvidas.component';
 import { ForgotComponent } from './forgot/forgot.component';
 import { YoutubeSubscribeComponent } from './painel/midia/youtube-subscribe/youtube-subscribe.component';
+import { PacotesComponent } from './painel/midia/pacotes/pacotes.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { YoutubeSubscribeComponent } from './painel/midia/youtube-subscribe/yout
     TermosComponent,
     DuvidasComponent,
     ForgotComponent,
-    YoutubeSubscribeComponent
+    YoutubeSubscribeComponent,
+    PacotesComponent
   ],
   imports: [
     BrowserModule,
