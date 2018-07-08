@@ -17,7 +17,7 @@ export class YoutubeSubscribeComponent implements OnInit {
   YoutubeSubsForm: FormGroup
   dolar: number = 4
   vlrPorMil: number = 5
-  lucro: number = 1.8
+  lucro: number = 6.8
   carteira: number
   nome: string
 

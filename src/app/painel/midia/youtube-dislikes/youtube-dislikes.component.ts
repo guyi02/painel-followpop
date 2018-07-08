@@ -18,7 +18,7 @@ export class YoutubeDislikesComponent implements OnInit {
   YoutubeDislikesForm: FormGroup
   dolar: number = 4
   vlrPorMil: number = 2
-  lucro: number = 1.6
+  lucro: number = 7
   carteira: number
   nome: string
 

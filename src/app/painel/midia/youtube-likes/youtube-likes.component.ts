@@ -17,7 +17,7 @@ export class YoutubeLikesComponent implements OnInit {
   YoutubeLikesForm: FormGroup
   dolar: number = 4
   vlrPorMil: number = 2
-  lucro: number = 1.6
+  lucro: number = 8
   carteira: number
   nome: string
 

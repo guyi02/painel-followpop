@@ -17,7 +17,7 @@ export class YoutubeViewsComponent implements OnInit {
   YoutubeViewsForm: FormGroup
   dolar: number = 4
   vlrPorMil: number = 0.90
-  lucro: number = 4
+  lucro: number = 8
   carteira: number
   nome: string
 
