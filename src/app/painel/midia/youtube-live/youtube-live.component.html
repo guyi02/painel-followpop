@@ -35,7 +35,7 @@
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
             <button *ngIf="carteira > totalValor()" (click)="enviarLikes(YoutubeLiveForm.value)" type="submit" [disabled]="YoutubeLiveForm.invalid || qtd.value < 5000 || qtd.value > 5000"
-              class="btn btn-block btn-default">Enviar likes</button>
+              class="btn btn-block btn-default">Enviar views</button>
               <p *ngIf="carteira < totalValor()">Saldo insuficiente</p>
           </div>
         </div>
