@@ -23,7 +23,7 @@ export class InstaCurtidasComponent implements OnInit {
   instaCurtidasForm: FormGroup
   dolar: number = 4
   vlrPorMil: number = 0.5
-  lucro: number = 4.2
+  lucro: number = 6
   carteira: number
   nome: string
   instaReg = /^(.*instagram.com\/p\/)(.*)[\/]/

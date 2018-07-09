@@ -6,35 +6,34 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-insta-seguidores',
-  templateUrl: './insta-seguidores.component.html',
-  styleUrls: ['./insta-seguidores.component.css']
+  selector: 'app-youtube-live',
+  templateUrl: './youtube-live.component.html',
+  styleUrls: ['./youtube-live.component.css']
 })
-export class InstaSeguidoresComponent implements OnInit {
+export class YoutubeLiveComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private db: AngularFirestore, private fireService: AuthService, private router: Router, private toast: ToastrService) { }
 
-  instaSeguidoresForm: FormGroup
+  YoutubeLiveForm: FormGroup
   dolar: number = 4
-  vlrPorMil: number = 4.80
-  lucro: number = 1.5
+  vlrPorMil: number = 2
+  lucro: number = 2.3
   carteira: number
   nome: string
- 
 
   ngOnInit() {
-    this.instaSeguidoresForm = this.fb.group({
+    this.YoutubeLiveForm = this.fb.group({
       link: this.fb.control('', [Validators.required, Validators.minLength(20)]),
-      quantidade: this.fb.control('', [Validators.required, Validators.minLength(100), Validators.pattern('^[1-9]+[0-9]*00$')]),
-      tipo: this.fb.control('ig-fl-br', Validators.required),
-      servico: this.fb.control('Seguidores Instagram Br', Validators.required),
+      quantidade: this.fb.control('', [Validators.required, Validators.minLength(5000), Validators.pattern('^[1-9]+[0-9]*00$')]),
+      tipo: this.fb.control('yt-lv-gl', Validators.required),
+      servico: this.fb.control('Youtube Live Views', Validators.required),
     })
     this.verificaSaldo()
   }
 
 
   totalValor() {
-    const qtd = this.instaSeguidoresForm.controls.quantidade.value
+    const qtd = this.YoutubeLiveForm.controls.quantidade.value
     const total = ((this.vlrPorMil / 1000) * qtd) * this.dolar * this.lucro
     return Math.round(total)
   }
@@ -53,7 +52,7 @@ export class InstaSeguidoresComponent implements OnInit {
   }
 
 
-  enviarSeguidores(form) {
+  enviarLikes(form) {
     const vlr = parseInt(document.getElementById('vlrTotal').innerHTML)
     this.fireService.verificaUserLogado().subscribe(user => {
       this.db.collection("pedidos").add({

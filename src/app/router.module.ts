@@ -22,6 +22,7 @@ import { DuvidasComponent } from "./painel/dashboard/duvidas/duvidas.component";
 import { ForgotComponent } from "./forgot/forgot.component";
 import { YoutubeSubscribeComponent } from "./painel/midia/youtube-subscribe/youtube-subscribe.component";
 import { PacotesComponent } from "./painel/midia/pacotes/pacotes.component";
+import { YoutubeLiveComponent } from "./painel/midia/youtube-live/youtube-live.component";
 const router: Routes = [
     { path: '', component: LoginComponent },
     { path: 'login', component: LoginComponent },
@@ -43,6 +44,7 @@ const router: Routes = [
             { path: 'youtube-likes', component: YoutubeLikesComponent },
             { path: 'youtube-dislikes', component: YoutubeDislikesComponent },
             { path: 'youtube-subscribe', component: YoutubeSubscribeComponent },
+            { path: 'youtube-live', component: YoutubeLiveComponent },
             { path: 'termos', component: TermosComponent },
             { path: 'duvidas', component: DuvidasComponent },
             { path: 'pacotes', component: PacotesComponent },

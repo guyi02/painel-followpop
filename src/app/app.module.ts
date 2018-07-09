@@ -35,6 +35,7 @@ import { DuvidasComponent } from './painel/dashboard/duvidas/duvidas.component';
 import { ForgotComponent } from './forgot/forgot.component';
 import { YoutubeSubscribeComponent } from './painel/midia/youtube-subscribe/youtube-subscribe.component';
 import { PacotesComponent } from './painel/midia/pacotes/pacotes.component';
+import { YoutubeLiveComponent } from './painel/midia/youtube-live/youtube-live.component';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import { PacotesComponent } from './painel/midia/pacotes/pacotes.component';
     DuvidasComponent,
     ForgotComponent,
     YoutubeSubscribeComponent,
-    PacotesComponent
+    PacotesComponent,
+    YoutubeLiveComponent
   ],
   imports: [
     BrowserModule,
