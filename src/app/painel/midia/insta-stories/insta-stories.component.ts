@@ -21,6 +21,7 @@ export class InstaStoriesComponent implements OnInit {
   lucro: number = 6
   carteira: number
   nome: string
+  celular: string
 
   ngOnInit() {
     this.instaStoriesForm = this.fb.group({
@@ -44,6 +45,7 @@ export class InstaStoriesComponent implements OnInit {
       this.db.collection("users").doc(user.uid).valueChanges().subscribe(res => {
         this.carteira = res['carteira'];
         this.nome = res['nome']
+        this.celular = res['celular']
       })
     })
   }
@@ -65,7 +67,8 @@ export class InstaStoriesComponent implements OnInit {
         tipo: form.tipo,
         valor: vlr,
         id: user.uid,
-        nome: this.nome
+        nome: this.nome,
+        celular: this.celular
       }).then(() => {
         const subtracao = this.carteira - vlr
         this.db.collection("users").doc(user.uid).set({

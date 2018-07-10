@@ -32,7 +32,7 @@ export class RegistrarComponent implements OnInit {
     this.formRegistro = this.fb.group({
       nome: ['', [Validators.required, Validators.minLength(2)]],
       sobrenome: ['', [Validators.required, Validators.minLength(2)]],
-      celular: ['', [Validators.required, Validators.minLength(7)]],
+      celular: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(11)]],
       email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       password2: ['', [Validators.required, Validators.minLength(6)]]

@@ -26,6 +26,7 @@ export class InstaCurtidasComponent implements OnInit {
   lucro: number = 6
   carteira: number
   nome: string
+  celular: string
   instaReg = /^(.*instagram.com\/p\/)(.*)[\/]/
 
 
@@ -50,6 +51,7 @@ export class InstaCurtidasComponent implements OnInit {
       this.db.collection("users").doc(user.uid).valueChanges().subscribe(res => {
         this.carteira = res['carteira'];
         this.nome = res['nome']
+        this.celular = res['celular']
       })
     })
   }
@@ -70,7 +72,8 @@ export class InstaCurtidasComponent implements OnInit {
         tipo: form.tipo,
         valor: vlr,
         id: user.uid,
-        nome: this.nome
+        nome: this.nome,
+        celular: this.celular
       }).then(() => {
         const subtracao = this.carteira - vlr
         this.db.collection("users").doc(user.uid).set({

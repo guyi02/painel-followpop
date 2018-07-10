@@ -20,6 +20,7 @@ export class FaceCurtidasglobalComponent implements OnInit {
   lucro: number = 3
   carteira: number
   nome: string
+  celular: string
 
 
   ngOnInit() {
@@ -43,6 +44,7 @@ export class FaceCurtidasglobalComponent implements OnInit {
       this.db.collection("users").doc(user.uid).valueChanges().subscribe(res => {
         this.carteira = res['carteira'];
         this.nome = res['nome']
+        this.celular = res['celular']
       })
     })
   }
@@ -63,7 +65,8 @@ export class FaceCurtidasglobalComponent implements OnInit {
         tipo: form.tipo,
         valor: vlr,
         id: user.uid,
-        nome: this.nome
+        nome: this.nome,
+        celular: this.celular
       }).then(() => {
         const subtracao = this.carteira - vlr
         this.db.collection("users").doc(user.uid).set({
