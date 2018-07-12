@@ -23,7 +23,7 @@ export class InstaCurtidasComponent implements OnInit {
   instaCurtidasForm: FormGroup
   dolar: number = 4
   vlrPorMil: number = 0.5
-  lucro: number = 6
+  lucro: number = 4.7
   carteira: number
   nome: string
   celular: string
