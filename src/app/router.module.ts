@@ -23,6 +23,7 @@ import { ForgotComponent } from "./forgot/forgot.component";
 import { YoutubeSubscribeComponent } from "./painel/midia/youtube-subscribe/youtube-subscribe.component";
 import { PacotesComponent } from "./painel/midia/pacotes/pacotes.component";
 import { YoutubeLiveComponent } from "./painel/midia/youtube-live/youtube-live.component";
+import { InstaCurtidasGlobalComponent } from "./painel/midia/insta-curtidas-global/insta-curtidas-global.component";
 const router: Routes = [
     { path: '', component: LoginComponent },
     { path: 'login', component: LoginComponent },
@@ -33,6 +34,7 @@ const router: Routes = [
             { path: 'dashboard', component: DashboardComponent },
             { path: 'founds', component: FoundsComponent },
             { path: 'insta-curtidas', component: InstaCurtidasComponent },
+            { path: 'insta-curtidas-global', component: InstaCurtidasGlobalComponent },
             { path: 'insta-seguidores', component: InstaSeguidoresComponent },
             { path: 'insta-stories', component: InstaStoriesComponent },
             { path: 'insta-comentarios', component: InstaComentariosComponent },

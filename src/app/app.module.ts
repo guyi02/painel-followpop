@@ -36,6 +36,7 @@ import { ForgotComponent } from './forgot/forgot.component';
 import { YoutubeSubscribeComponent } from './painel/midia/youtube-subscribe/youtube-subscribe.component';
 import { PacotesComponent } from './painel/midia/pacotes/pacotes.component';
 import { YoutubeLiveComponent } from './painel/midia/youtube-live/youtube-live.component';
+import { InstaCurtidasGlobalComponent } from './painel/midia/insta-curtidas-global/insta-curtidas-global.component';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { YoutubeLiveComponent } from './painel/midia/youtube-live/youtube-live.c
     ForgotComponent,
     YoutubeSubscribeComponent,
     PacotesComponent,
-    YoutubeLiveComponent
+    YoutubeLiveComponent,
+    InstaCurtidasGlobalComponent
   ],
   imports: [
     BrowserModule,
