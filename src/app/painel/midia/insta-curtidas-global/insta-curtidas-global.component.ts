@@ -32,7 +32,7 @@ export class InstaCurtidasGlobalComponent implements OnInit {
   ngOnInit() {
     this.instaCurtidasGlForm = this.fb.group({
       link: this.fb.control('', [Validators.required, Validators.minLength(20), Validators.pattern(this.instaReg)]),
-      quantidade: this.fb.control('', [Validators.required, Validators.minLength(100), Validators.pattern('^[1-9]+[0-9]*00$')]),
+      quantidade: this.fb.control('', [Validators.required, Validators.minLength(1000), Validators.pattern('^[1-9]+[0-9]*00$')]),
       tipo: this.fb.control('ig-lk-gl', Validators.required),
       servico: this.fb.control('Curtidas Instagram Global', Validators.required),
     })
