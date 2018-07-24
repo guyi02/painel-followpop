@@ -16,8 +16,8 @@ export class YoutubeViewsComponent implements OnInit {
 
   YoutubeViewsForm: FormGroup
   dolar: number = 4
-  vlrPorMil: number = 0.90
-  lucro: number = 8
+  vlrPorMil: number = 1.25
+  lucro: number = 6
   carteira: number
   nome: string
   celular: string
@@ -26,7 +26,7 @@ export class YoutubeViewsComponent implements OnInit {
     this.YoutubeViewsForm = this.fb.group({
       link: this.fb.control('', [Validators.required, Validators.minLength(20)]),
       quantidade: this.fb.control('', [Validators.required, Validators.minLength(1000), Validators.pattern('^[1-9]+[0-9]*00$')]),
-      tipo: this.fb.control('yt-vw-br', Validators.required),
+      tipo: this.fb.control('yt-vw', Validators.required),
       servico: this.fb.control('Youtube Views', Validators.required),
     })
     this.verificaSaldo()
