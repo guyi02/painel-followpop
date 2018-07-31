@@ -37,6 +37,7 @@ import { YoutubeSubscribeComponent } from './painel/midia/youtube-subscribe/yout
 import { PacotesComponent } from './painel/midia/pacotes/pacotes.component';
 import { YoutubeLiveComponent } from './painel/midia/youtube-live/youtube-live.component';
 import { InstaCurtidasGlobalComponent } from './painel/midia/insta-curtidas-global/insta-curtidas-global.component';
+import { InstaSeguidoresGlComponent } from './painel/midia/insta-seguidores-gl/insta-seguidores-gl.component';
 
 
 @NgModule({
@@ -64,7 +65,8 @@ import { InstaCurtidasGlobalComponent } from './painel/midia/insta-curtidas-glob
     YoutubeSubscribeComponent,
     PacotesComponent,
     YoutubeLiveComponent,
-    InstaCurtidasGlobalComponent
+    InstaCurtidasGlobalComponent,
+    InstaSeguidoresGlComponent
   ],
   imports: [
     BrowserModule,
