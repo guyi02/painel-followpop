@@ -26,7 +26,6 @@ import { InstaComentariosComponent } from './painel/midia/insta-comentarios/inst
 import { FaceCurtidaspostComponent } from './painel/midia/face-curtidaspost/face-curtidaspost.component';
 import { FaceCurtidasglobalComponent } from './painel/midia/face-curtidasglobal/face-curtidasglobal.component';
 import { FaceCurtidaspaginaComponent } from './painel/midia/face-curtidaspagina/face-curtidaspagina.component';
-import { FaceSeguidoresComponent } from './painel/midia/face-seguidores/face-seguidores.component';
 import { YoutubeViewsComponent } from './painel/midia/youtube-views/youtube-views.component';
 import { YoutubeLikesComponent } from './painel/midia/youtube-likes/youtube-likes.component';
 import { YoutubeDislikesComponent } from './painel/midia/youtube-dislikes/youtube-dislikes.component';
@@ -55,7 +54,6 @@ import { InstaSeguidoresGlComponent } from './painel/midia/insta-seguidores-gl/i
     FaceCurtidaspostComponent,
     FaceCurtidasglobalComponent,
     FaceCurtidaspaginaComponent,
-    FaceSeguidoresComponent,
     YoutubeViewsComponent,
     YoutubeLikesComponent,
     YoutubeDislikesComponent,
