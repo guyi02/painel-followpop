@@ -20,7 +20,7 @@ export class InstaSeguidoresGlComponent implements OnInit {
   instaSeguidoresGlForm: FormGroup
   dolar: number = 4
   vlrPorMil: number = 0.8
-  lucro: number = 2.2
+  lucro: number = 3.6
   carteira: number
   nome: string
   celular: string
