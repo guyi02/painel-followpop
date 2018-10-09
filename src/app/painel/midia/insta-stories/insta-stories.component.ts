@@ -17,8 +17,8 @@ export class InstaStoriesComponent implements OnInit {
 
   instaStoriesForm: FormGroup
   dolar: number = 4
-  vlrPorMil: number = 0.5
-  lucro: number = 6
+  vlrPorMil: number = 0.2
+  lucro: number = 2
   carteira: number
   nome: string
   celular: string

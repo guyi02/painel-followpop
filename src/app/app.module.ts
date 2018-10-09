@@ -24,17 +24,13 @@ import { CommonModule, APP_BASE_HREF, LocationStrategy, HashLocationStrategy } f
 import { InstaStoriesComponent } from './painel/midia/insta-stories/insta-stories.component';
 import { InstaComentariosComponent } from './painel/midia/insta-comentarios/insta-comentarios.component';
 import { FaceCurtidaspostComponent } from './painel/midia/face-curtidaspost/face-curtidaspost.component';
-import { FaceCurtidasglobalComponent } from './painel/midia/face-curtidasglobal/face-curtidasglobal.component';
 import { FaceCurtidaspaginaComponent } from './painel/midia/face-curtidaspagina/face-curtidaspagina.component';
 import { YoutubeViewsComponent } from './painel/midia/youtube-views/youtube-views.component';
-import { YoutubeLikesComponent } from './painel/midia/youtube-likes/youtube-likes.component';
-import { YoutubeDislikesComponent } from './painel/midia/youtube-dislikes/youtube-dislikes.component';
 import { TermosComponent } from './painel/midia/termos/termos.component';
 import { DuvidasComponent } from './painel/dashboard/duvidas/duvidas.component';
 import { ForgotComponent } from './forgot/forgot.component';
 import { YoutubeSubscribeComponent } from './painel/midia/youtube-subscribe/youtube-subscribe.component';
 import { PacotesComponent } from './painel/midia/pacotes/pacotes.component';
-import { YoutubeLiveComponent } from './painel/midia/youtube-live/youtube-live.component';
 import { InstaCurtidasGlobalComponent } from './painel/midia/insta-curtidas-global/insta-curtidas-global.component';
 import { InstaSeguidoresGlComponent } from './painel/midia/insta-seguidores-gl/insta-seguidores-gl.component';
 
@@ -52,17 +48,13 @@ import { InstaSeguidoresGlComponent } from './painel/midia/insta-seguidores-gl/i
     InstaStoriesComponent,
     InstaComentariosComponent,
     FaceCurtidaspostComponent,
-    FaceCurtidasglobalComponent,
     FaceCurtidaspaginaComponent,
     YoutubeViewsComponent,
-    YoutubeLikesComponent,
-    YoutubeDislikesComponent,
     TermosComponent,
     DuvidasComponent,
     ForgotComponent,
     YoutubeSubscribeComponent,
     PacotesComponent,
-    YoutubeLiveComponent,
     InstaCurtidasGlobalComponent,
     InstaSeguidoresGlComponent
   ],

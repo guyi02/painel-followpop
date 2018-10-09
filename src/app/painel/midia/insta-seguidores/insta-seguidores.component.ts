@@ -16,8 +16,8 @@ export class InstaSeguidoresComponent implements OnInit {
 
   instaSeguidoresForm: FormGroup
   dolar: number = 4
-  vlrPorMil: number = 4.80
-  lucro: number = 1.45
+  vlrPorMil: number = 5
+  lucro: number = 1.80
   carteira: number
   nome: string
   celular: string

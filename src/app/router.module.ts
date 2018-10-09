@@ -11,17 +11,13 @@ import { InstaSeguidoresComponent } from "./painel/midia/insta-seguidores/insta-
 import { InstaStoriesComponent } from "./painel/midia/insta-stories/insta-stories.component";
 import { InstaComentariosComponent } from "./painel/midia/insta-comentarios/insta-comentarios.component";
 import { FaceCurtidaspostComponent } from "./painel/midia/face-curtidaspost/face-curtidaspost.component";
-import { FaceCurtidasglobalComponent } from "./painel/midia/face-curtidasglobal/face-curtidasglobal.component";
 import { FaceCurtidaspaginaComponent } from "./painel/midia/face-curtidaspagina/face-curtidaspagina.component";
 import { YoutubeViewsComponent } from "./painel/midia/youtube-views/youtube-views.component";
-import { YoutubeLikesComponent } from "./painel/midia/youtube-likes/youtube-likes.component";
-import { YoutubeDislikesComponent } from "./painel/midia/youtube-dislikes/youtube-dislikes.component";
 import { TermosComponent } from "./painel/midia/termos/termos.component";
 import { DuvidasComponent } from "./painel/dashboard/duvidas/duvidas.component";
 import { ForgotComponent } from "./forgot/forgot.component";
 import { YoutubeSubscribeComponent } from "./painel/midia/youtube-subscribe/youtube-subscribe.component";
 import { PacotesComponent } from "./painel/midia/pacotes/pacotes.component";
-import { YoutubeLiveComponent } from "./painel/midia/youtube-live/youtube-live.component";
 import { InstaCurtidasGlobalComponent } from "./painel/midia/insta-curtidas-global/insta-curtidas-global.component";
 import { InstaSeguidoresGlComponent } from "./painel/midia/insta-seguidores-gl/insta-seguidores-gl.component";
 const router: Routes = [
@@ -40,13 +36,9 @@ const router: Routes = [
             { path: 'insta-stories', component: InstaStoriesComponent },
             { path: 'insta-comentarios', component: InstaComentariosComponent },
             { path: 'face-curtidaspost', component: FaceCurtidaspostComponent },
-            { path: 'face-curtidasglobal', component: FaceCurtidasglobalComponent },
             { path: 'face-curtidaspagina', component: FaceCurtidaspaginaComponent },
             { path: 'youtube-views', component: YoutubeViewsComponent },
-            { path: 'youtube-likes', component: YoutubeLikesComponent },
-            { path: 'youtube-dislikes', component: YoutubeDislikesComponent },
             { path: 'youtube-subscribe', component: YoutubeSubscribeComponent },
-            { path: 'youtube-live', component: YoutubeLiveComponent },
             { path: 'termos', component: TermosComponent },
             { path: 'duvidas', component: DuvidasComponent },
             { path: 'pacotes', component: PacotesComponent },

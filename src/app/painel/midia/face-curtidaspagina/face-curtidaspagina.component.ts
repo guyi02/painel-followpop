@@ -16,8 +16,8 @@ export class FaceCurtidaspaginaComponent implements OnInit {
 
   FaceCurtidaspaginaForm: FormGroup
   dolar: number = 4
-  vlrPorMil: number = 5
-  lucro: number = 1.7
+  vlrPorMil: number = 6
+  lucro: number = 1.65
   carteira: number
   nome: string
   celular: string
