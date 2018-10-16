@@ -3,11 +3,18 @@
     <!-- Breadcrumbs-->
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        <span>PACOTES - Auto Likes (Em Manutenção) | Valor em carteira: {{carteira}}</span>
+        <span>PACOTES - Auto Likes</span>
       </li>
     </ol>
+
+    <div class="msg p-2 my-2">
+      <p>Preencha o campo referente ao pacote que deseja. Exemplo: <b>PACOTE 2000 CURTIDAS</b></p>
+      <p>No primeiro campo preencha apenas com seu usuário. Exemplo: follow_pop. No campo abaixo selecione a quantidade
+        de posts que deseja dividir as 2000 curtidas.</p>
+    </div>
+
     <div class="card-deck">
-      <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+      <div class="card text-dark bg-light mb-3">
         <div class="card-header">
           <i class="fab fa-instagram"></i> Pacote 1000 Curtidas instagram</div>
         <div class="card-body">
@@ -21,7 +28,8 @@
               </span>
             </div>
             <input #user type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-            <input #service type="hidden" class="form-control" value="Pacote 1000 curtidas" aria-label="Username" aria-describedby="basic-addon1">
+            <input #service type="hidden" class="form-control" value="Pacote 1000 curtidas" aria-label="Username"
+              aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -33,15 +41,13 @@
               <option value="20">20</option>
               <option value="30">30</option>
             </select>
-            <span style="font-size: 0.9em; color: grey" id="helpBlock" class="help-block">A quantidade de curtida por post ou foto será o pacote divido pelo numero de post que escolher ex: 1000/10, 1000/20
-              e 1000/30.</span>
           </div>
 
           <button *ngIf="carteira > 15" type="button" class="btn btn-primary btn-lg btn-block" (click)="enviarPacote(user.value, qtd.value, service.value, 15)">Comprar</button>
         </div>
 
       </div>
-      <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+      <div class="card text-dark bg-light mb-3" >
         <div class="card-header">
           <i class="fab fa-instagram"></i> Pacote 2000 Curtidas instagram</div>
         <div class="card-body">
@@ -54,8 +60,10 @@
                 <i class="fab fa-instagram"></i>
               </span>
             </div>
-            <input #user2 type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-            <input #service2 type="hidden" class="form-control" value="Pacote 2000 curtidas" aria-label="Username" aria-describedby="basic-addon1">
+            <input #user2 type="text" class="form-control" placeholder="Username" aria-label="Username"
+              aria-describedby="basic-addon1">
+            <input #service2 type="hidden" class="form-control" value="Pacote 2000 curtidas" aria-label="Username"
+              aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -67,14 +75,13 @@
               <option value="20">20</option>
               <option value="30">30</option>
             </select>
-            <span style="font-size: 0.9em; color: grey" id="helpBlock" class="help-block">A quantidade de curtida por post ou foto será o pacote divido pelo numero de post que escolher ex: 1000/10, 1000/20
-              e 1000/30.</span>
           </div>
 
-          <button *ngIf="carteira > 30" type="button" (click)="enviarPacote(user2.value, qtd2.value, service2.value, 30)" class="btn btn-primary btn-lg btn-block">Comprar</button>
+          <button *ngIf="carteira > 30" type="button" (click)="enviarPacote(user2.value, qtd2.value, service2.value, 30)"
+            class="btn btn-primary btn-lg btn-block">Comprar</button>
         </div>
       </div>
-      <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+      <div class="card text-dark bg-light mb-3" >
         <div class="card-header">
           <i class="fab fa-instagram"></i> Pacote 3000 Curtidas instagram</div>
         <div class="card-body">
@@ -87,8 +94,10 @@
                 <i class="fab fa-instagram"></i>
               </span>
             </div>
-            <input #user3 type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-            <input #service3 type="hidden" class="form-control" value="Pacote 3000 curtidas" aria-label="Username" aria-describedby="basic-addon1">
+            <input #user3 type="text" class="form-control" placeholder="Username" aria-label="Username"
+              aria-describedby="basic-addon1">
+            <input #service3 type="hidden" class="form-control" value="Pacote 3000 curtidas" aria-label="Username"
+              aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -100,17 +109,16 @@
               <option value="20">20</option>
               <option value="30">30</option>
             </select>
-            <span style="font-size: 0.9em; color: grey" id="helpBlock" class="help-block">A quantidade de curtida por post ou foto será o pacote divido pelo numero de post que escolher ex: 1000/10, 1000/20
-              e 1000/30.</span>
           </div>
 
-          <button *ngIf="carteira > 45" type="button" (click)="enviarPacote(user3.value, qtd3.value, service3.value, 45)" class="btn btn-primary btn-lg btn-block">Comprar</button>
+          <button *ngIf="carteira > 45" type="button" (click)="enviarPacote(user3.value, qtd3.value, service3.value, 45)"
+            class="btn btn-primary btn-lg btn-block">Comprar</button>
         </div>
       </div>
     </div>
 
     <div class="card-deck">
-      <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+      <div class="card text-white bg-secondary mb-3" >
         <div class="card-header">
           <i class="fab fa-instagram"></i> Pacote 4000 Curtidas instagram</div>
         <div class="card-body">
@@ -123,8 +131,10 @@
                 <i class="fab fa-instagram"></i>
               </span>
             </div>
-            <input #user4 type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-            <input #service4 type="hidden" class="form-control" value="Pacote 4000 curtidas" aria-label="Username" aria-describedby="basic-addon1">
+            <input #user4 type="text" class="form-control" placeholder="Username" aria-label="Username"
+              aria-describedby="basic-addon1">
+            <input #service4 type="hidden" class="form-control" value="Pacote 4000 curtidas" aria-label="Username"
+              aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -136,14 +146,13 @@
               <option value="20">20</option>
               <option value="30">30</option>
             </select>
-            <span style="font-size: 0.9em; color: white" id="helpBlock" class="help-block">A quantidade de curtida por post ou foto será o pacote divido pelo numero de post que escolher ex: 1000/10, 1000/20
-              e 1000/30.</span>
           </div>
 
-          <button *ngIf="carteira > 60" type="button" (click)="enviarPacote(user4.value, qtd4.value, service4.value, 60)" class="btn btn-primary btn-lg btn-block">Comprar</button>
+          <button *ngIf="carteira > 60" type="button" (click)="enviarPacote(user4.value, qtd4.value, service4.value, 60)"
+            class="btn btn-primary btn-lg btn-block">Comprar</button>
         </div>
       </div>
-      <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+      <div class="card text-white bg-secondary mb-3" >
         <div class="card-header">
           <i class="fab fa-instagram"></i> Pacote 5000 Curtidas instagram</div>
         <div class="card-body">
@@ -156,8 +165,10 @@
                 <i class="fab fa-instagram"></i>
               </span>
             </div>
-            <input #user5 type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-            <input #service5 type="hidden" class="form-control" value="Pacote 5000 curtidas" aria-label="Username" aria-describedby="basic-addon1">
+            <input #user5 type="text" class="form-control" placeholder="Username" aria-label="Username"
+              aria-describedby="basic-addon1">
+            <input #service5 type="hidden" class="form-control" value="Pacote 5000 curtidas" aria-label="Username"
+              aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -169,14 +180,13 @@
               <option value="20">20</option>
               <option value="30">30</option>
             </select>
-            <span style="font-size: 0.9em; color: white" id="helpBlock" class="help-block">A quantidade de curtida por post ou foto será o pacote divido pelo numero de post que escolher ex: 1000/10, 1000/20
-              e 1000/30.</span>
           </div>
 
-          <button *ngIf="carteira > 75" type="button" (click)="enviarPacote(user5.value, qtd5.value, service5.value, 75)" class="btn btn-primary btn-lg btn-block">Comprar</button>
+          <button *ngIf="carteira > 75" type="button" (click)="enviarPacote(user5.value, qtd5.value, service5.value, 75)"
+            class="btn btn-primary btn-lg btn-block">Comprar</button>
         </div>
       </div>
-      <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+      <div class="card text-white bg-secondary mb-3" >
         <div class="card-header">
           <i class="fab fa-instagram"></i> Pacote 6000 Curtidas instagram</div>
         <div class="card-body">
@@ -189,8 +199,10 @@
                 <i class="fab fa-instagram"></i>
               </span>
             </div>
-            <input #user6 type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-            <input #service6 type="hidden" class="form-control" value="Pacote 6000 curtidas" aria-label="Username" aria-describedby="basic-addon1">
+            <input #user6 type="text" class="form-control" placeholder="Username" aria-label="Username"
+              aria-describedby="basic-addon1">
+            <input #service6 type="hidden" class="form-control" value="Pacote 6000 curtidas" aria-label="Username"
+              aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -202,16 +214,15 @@
               <option value="20">20</option>
               <option value="30">30</option>
             </select>
-            <span style="font-size: 0.9em; color: white" id="helpBlock" class="help-block">A quantidade de curtida por post ou foto será o pacote divido pelo numero de post que escolher ex: 1000/10, 1000/20
-              e 1000/30.</span>
           </div>
 
-          <button *ngIf="carteira > 90" type="button" (click)="enviarPacote(user6.value, qtd6.value, service6.value, 90)" class="btn btn-primary btn-lg btn-block">Comprar</button>
+          <button *ngIf="carteira > 90" type="button" (click)="enviarPacote(user6.value, qtd6.value, service6.value, 90)"
+            class="btn btn-primary btn-lg btn-block">Comprar</button>
         </div>
       </div>
     </div>
     <div class="card-deck">
-      <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+      <div class="card text-white bg-dark mb-3" >
         <div class="card-header">Pacote 7000 Curtidas instagram</div>
         <div class="card-body">
           <h5 class="card-title">
@@ -223,8 +234,10 @@
                 <i class="fab fa-instagram"></i>
               </span>
             </div>
-            <input #user7 type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-            <input #service7 type="hidden" class="form-control" value="Pacote 7000 curtidas" aria-label="Username" aria-describedby="basic-addon1">
+            <input #user7 type="text" class="form-control" placeholder="Username" aria-label="Username"
+              aria-describedby="basic-addon1">
+            <input #service7 type="hidden" class="form-control" value="Pacote 7000 curtidas" aria-label="Username"
+              aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -236,14 +249,13 @@
               <option value="20">20</option>
               <option value="30">30</option>
             </select>
-            <span style="font-size: 0.9em; color: white" id="helpBlock" class="help-block">A quantidade de curtida por post ou foto será o pacote divido pelo numero de post que escolher ex: 1000/10, 1000/20
-              e 1000/30.</span>
           </div>
 
-          <button *ngIf="carteira > 105" type="button" (click)="enviarPacote(user7.value, qtd7.value, service7.value, 105)" class="btn btn-primary btn-lg btn-block">Comprar</button>
+          <button *ngIf="carteira > 105" type="button" (click)="enviarPacote(user7.value, qtd7.value, service7.value, 105)"
+            class="btn btn-primary btn-lg btn-block">Comprar</button>
         </div>
       </div>
-      <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+      <div class="card text-white bg-dark mb-3" >
         <div class="card-header">Pacote 8000 Curtidas instagram</div>
         <div class="card-body">
           <h5 class="card-title">
@@ -255,8 +267,10 @@
                 <i class="fab fa-instagram"></i>
               </span>
             </div>
-            <input #user8 type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-            <input #service8 type="hidden" class="form-control" value="Pacote 8000 curtidas" aria-label="Username" aria-describedby="basic-addon1">
+            <input #user8 type="text" class="form-control" placeholder="Username" aria-label="Username"
+              aria-describedby="basic-addon1">
+            <input #service8 type="hidden" class="form-control" value="Pacote 8000 curtidas" aria-label="Username"
+              aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -268,15 +282,14 @@
               <option value="20">20</option>
               <option value="30">30</option>
             </select>
-            <span style="font-size: 0.9em; color: white" id="helpBlock" class="help-block">A quantidade de curtida por post ou foto será o pacote divido pelo numero de post que escolher ex: 1000/10, 1000/20
-              e 1000/30.</span>
           </div>
 
-          <button *ngIf="carteira > 120" type="button" (click)="enviarPacote(user8.value, qtd8.value, service8.value, 120)" class="btn btn-primary btn-lg btn-block">Comprar</button>
+          <button *ngIf="carteira > 120" type="button" (click)="enviarPacote(user8.value, qtd8.value, service8.value, 120)"
+            class="btn btn-primary btn-lg btn-block">Comprar</button>
         </div>
       </div>
 
-      <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+      <div class="card text-white bg-dark mb-3" >
         <div class="card-header">Pacote 9000 Curtidas instagram</div>
         <div class="card-body">
           <h5 class="card-title">
@@ -288,8 +301,10 @@
                 <i class="fab fa-instagram"></i>
               </span>
             </div>
-            <input #user9 type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-            <input #service9 type="hidden" class="form-control" value="Pacote 9000 curtidas" aria-label="Username" aria-describedby="basic-addon1">
+            <input #user9 type="text" class="form-control" placeholder="Username" aria-label="Username"
+              aria-describedby="basic-addon1">
+            <input #service9 type="hidden" class="form-control" value="Pacote 9000 curtidas" aria-label="Username"
+              aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -301,11 +316,10 @@
               <option value="20">20</option>
               <option value="30">30</option>
             </select>
-            <span style="font-size: 0.9em; color: white" id="helpBlock" class="help-block">A quantidade de curtida por post ou foto será o pacote divido pelo numero de post que escolher ex: 1000/10, 1000/20
-              e 1000/30.</span>
           </div>
 
-          <button *ngIf="carteira > 135 " type="button" (click)="enviarPacote(user9.value, qtd9.value, service9.value, 135)" class="btn btn-primary btn-lg btn-block">Comprar</button>
+          <button *ngIf="carteira > 135 " type="button" (click)="enviarPacote(user9.value, qtd9.value, service9.value, 135)"
+            class="btn btn-primary btn-lg btn-block">Comprar</button>
         </div>
       </div>
     </div>

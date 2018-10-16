@@ -11,6 +11,7 @@ import { Subscription } from 'rxjs';
 export class PainelComponent implements OnInit, OnDestroy {
   isAuth = false
   inscricao: Subscription
+  carteira: any
 
 
 
@@ -20,6 +21,15 @@ export class PainelComponent implements OnInit, OnDestroy {
     //como vamos sair a todo momento, devemos nos desinscrever desse subscribe, com o onDestroy
     this.inscricao = this.authService.mudaAutorizacao.subscribe(authStatus => {
       this.isAuth = authStatus
+    })
+    this.verificaSaldo()
+  }
+
+  verificaSaldo() {
+    this.authService.verificaUserLogado().subscribe(user => {
+      this.db.collection("users").doc(user.uid).valueChanges().subscribe(res => {
+        this.carteira = res['carteira'];
+      })
     })
   }
 
