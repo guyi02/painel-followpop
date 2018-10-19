@@ -41,4 +41,5 @@ export class PainelComponent implements OnInit, OnDestroy {
     this.inscricao.unsubscribe()
   }
 
+  
 }

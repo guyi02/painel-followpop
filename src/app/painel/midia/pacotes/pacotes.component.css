@@ -13,7 +13,8 @@ button {
 }
 
 .msg {
-  background-color: #ffc107
+  background-color: #ffc107;
+  border-radius: 4px;
 }
 
 .msg p {

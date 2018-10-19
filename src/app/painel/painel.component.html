@@ -5,7 +5,9 @@
     aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+  
   <div class="collapse navbar-collapse" id="navbarResponsive">
+       
     <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
         <a class="nav-link" [routerLink]="['/painel']">
@@ -15,7 +17,7 @@
       </li>
 
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-        <a class="nav-link" [routerLink]="['pacotes']">
+        <a class="nav-link" onClick="document.querySelector('#navbarResponsive').classList.remove('show')" [routerLink]="['pacotes']">
           <i class="far fa-star"></i>
           <span class="nav-link-text"> Promoção</span>
         </a>
@@ -30,27 +32,27 @@
         </a>
         <ul class="sidenav-second-level collapse" id="collapseComponents">
           <li>
-            <a [routerLink]="['insta-curtidas']">
+            <a onClick="document.querySelector('#navbarResponsive').classList.remove('show')" [routerLink]="['insta-curtidas']">
               <i class="fab fa-instagram"></i> Curtidas instagram Br</a>
           </li>
           <li>
-            <a [routerLink]="['insta-curtidas-global']">
+            <a onClick="document.querySelector('#navbarResponsive').classList.remove('show')" [routerLink]="['insta-curtidas-global']">
               <i class="fab fa-instagram"></i> Curtidas instagram Global</a>
           </li>
           <li>
-            <a [routerLink]="['insta-seguidores']">
+            <a onClick="document.querySelector('#navbarResponsive').classList.remove('show')" [routerLink]="['insta-seguidores']">
               <i class="fab fa-instagram"></i> Seguidores instagram Br</a>
           </li>
           <li>
-            <a [routerLink]="['insta-seguidores-gl']">
+            <a onClick="document.querySelector('#navbarResponsive').classList.remove('show')" [routerLink]="['insta-seguidores-gl']">
               <i class="fab fa-instagram"></i> Seguidores instagram Global</a>
           </li>
           <li>
-            <a [routerLink]="['insta-stories']">
+            <a onClick="document.querySelector('#navbarResponsive').classList.remove('show')" [routerLink]="['insta-stories']">
               <i class="fab fa-instagram"></i> Views stories instagram</a>
           </li>
           <li>
-            <a [routerLink]="['insta-comentarios']">
+            <a onClick="document.querySelector('#navbarResponsive').classList.remove('show')" [routerLink]="['insta-comentarios']">
               <i class="fab fa-instagram"></i> Comentários instagram</a>
           </li>
         </ul>
@@ -64,11 +66,12 @@
         </a>
         <ul class="sidenav-second-level collapse" id="collapseExamplePages">
           <li>
-            <a [routerLink]="['face-curtidaspost']">
+          
+            <a onClick="document.querySelector('#navbarResponsive').classList.remove('show')"  [routerLink]="['face-curtidaspost']">
               <i class="fab fa-facebook"></i> Curtidas em Foto/Postagem br</a>
           </li>
           <li>
-            <a [routerLink]="['face-curtidaspagina']">
+            <a onClick="document.querySelector('#navbarResponsive').classList.remove('show')" [routerLink]="['face-curtidaspagina']">
               <i class="fab fa-facebook"></i> Curtidas em Pagina</a>
           </li>
         </ul>
@@ -80,18 +83,18 @@
         </a>
         <ul class="sidenav-second-level collapse" id="collapseMulti">
           <li>
-            <a [routerLink]="['youtube-views']">
+            <a onClick="document.querySelector('#navbarResponsive').classList.remove('show')" [routerLink]="['youtube-views']">
               <i class="fab fa-youtube"></i> Visualizações Youtube</a>
           </li>
 
           <li>
-            <a [routerLink]="['youtube-subscribe']">
+            <a onClick="document.querySelector('#navbarResponsive').classList.remove('show')" [routerLink]="['youtube-subscribe']">
               <i class="fab fa-youtube"></i> Youtube Inscritos</a>
           </li>
         </ul>
       </li>
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-        <a class="nav-link" [routerLink]="['termos']">
+        <a class="nav-link" onClick="document.querySelector('#navbarResponsive').classList.remove('show')"  [routerLink]="['termos']">
           <i class="fas fa-book"></i>
           <span class="nav-link-text"> Termos de uso</span>
         </a>
@@ -106,7 +109,7 @@
 
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
         <div class="nav-link money_text">
-          <span>Carteira: R$</span>
+          <span><i class="fas fa-wallet"></i> Carteira: R$</span>
           {{carteira}}
         </div>
       </li>
@@ -156,3 +159,9 @@
     </div>
   </div>
 </div>
+
+
+ 
+ 
+
+
